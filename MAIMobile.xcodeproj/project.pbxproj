@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42E94ABD1A65912C00F13C45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E94ABC1A65912C00F13C45 /* main.m */; };
+		42E94AC01A65912C00F13C45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E94ABF1A65912C00F13C45 /* AppDelegate.m */; };
+		42E94AC31A65912C00F13C45 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E94AC21A65912C00F13C45 /* FirstViewController.m */; };
+		42E94AC61A65912C00F13C45 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E94AC51A65912C00F13C45 /* SecondViewController.m */; };
+		42E94AC91A65912C00F13C45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E94AC71A65912C00F13C45 /* Main.storyboard */; };
+		42E94ACB1A65912C00F13C45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E94ACA1A65912C00F13C45 /* Images.xcassets */; };
+		42E94ACE1A65912C00F13C45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E94ACC1A65912C00F13C45 /* LaunchScreen.xib */; };
+		42E94ADA1A65912C00F13C45 /* MAIMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E94AD91A65912C00F13C45 /* MAIMobileTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42E94AD41A65912C00F13C45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42E94AAF1A65912C00F13C45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42E94AB61A65912C00F13C45;
+			remoteInfo = MAIMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42E94AB71A65912C00F13C45 /* MAIMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAIMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E94ABB1A65912C00F13C45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E94ABC1A65912C00F13C45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42E94ABE1A65912C00F13C45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42E94ABF1A65912C00F13C45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42E94AC11A65912C00F13C45 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		42E94AC21A65912C00F13C45 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		42E94AC41A65912C00F13C45 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		42E94AC51A65912C00F13C45 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		42E94AC81A65912C00F13C45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42E94ACA1A65912C00F13C45 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		42E94ACD1A65912C00F13C45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		42E94AD31A65912C00F13C45 /* MAIMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAIMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E94AD81A65912C00F13C45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E94AD91A65912C00F13C45 /* MAIMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAIMobileTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42E94AB41A65912C00F13C45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E94AD01A65912C00F13C45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42E94AAE1A65912C00F13C45 = {
+			isa = PBXGroup;
+			children = (
+				42E94AB91A65912C00F13C45 /* MAIMobile */,
+				42E94AD61A65912C00F13C45 /* MAIMobileTests */,
+				42E94AB81A65912C00F13C45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42E94AB81A65912C00F13C45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42E94AB71A65912C00F13C45 /* MAIMobile.app */,
+				42E94AD31A65912C00F13C45 /* MAIMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42E94AB91A65912C00F13C45 /* MAIMobile */ = {
+			isa = PBXGroup;
+			children = (
+				42E94ABE1A65912C00F13C45 /* AppDelegate.h */,
+				42E94ABF1A65912C00F13C45 /* AppDelegate.m */,
+				42E94AC11A65912C00F13C45 /* FirstViewController.h */,
+				42E94AC21A65912C00F13C45 /* FirstViewController.m */,
+				42E94AC41A65912C00F13C45 /* SecondViewController.h */,
+				42E94AC51A65912C00F13C45 /* SecondViewController.m */,
+				42E94AC71A65912C00F13C45 /* Main.storyboard */,
+				42E94ACA1A65912C00F13C45 /* Images.xcassets */,
+				42E94ACC1A65912C00F13C45 /* LaunchScreen.xib */,
+				42E94ABA1A65912C00F13C45 /* Supporting Files */,
+			);
+			path = MAIMobile;
+			sourceTree = "<group>";
+		};
+		42E94ABA1A65912C00F13C45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42E94ABB1A65912C00F13C45 /* Info.plist */,
+				42E94ABC1A65912C00F13C45 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42E94AD61A65912C00F13C45 /* MAIMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				42E94AD91A65912C00F13C45 /* MAIMobileTests.m */,
+				42E94AD71A65912C00F13C45 /* Supporting Files */,
+			);
+			path = MAIMobileTests;
+			sourceTree = "<group>";
+		};
+		42E94AD71A65912C00F13C45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42E94AD81A65912C00F13C45 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42E94AB61A65912C00F13C45 /* MAIMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E94ADD1A65912C00F13C45 /* Build configuration list for PBXNativeTarget "MAIMobile" */;
+			buildPhases = (
+				42E94AB31A65912C00F13C45 /* Sources */,
+				42E94AB41A65912C00F13C45 /* Frameworks */,
+				42E94AB51A65912C00F13C45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MAIMobile;
+			productName = MAIMobile;
+			productReference = 42E94AB71A65912C00F13C45 /* MAIMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42E94AD21A65912C00F13C45 /* MAIMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E94AE01A65912C00F13C45 /* Build configuration list for PBXNativeTarget "MAIMobileTests" */;
+			buildPhases = (
+				42E94ACF1A65912C00F13C45 /* Sources */,
+				42E94AD01A65912C00F13C45 /* Frameworks */,
+				42E94AD11A65912C00F13C45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42E94AD51A65912C00F13C45 /* PBXTargetDependency */,
+			);
+			name = MAIMobileTests;
+			productName = MAIMobileTests;
+			productReference = 42E94AD31A65912C00F13C45 /* MAIMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42E94AAF1A65912C00F13C45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = MAI;
+				TargetAttributes = {
+					42E94AB61A65912C00F13C45 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					42E94AD21A65912C00F13C45 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 42E94AB61A65912C00F13C45;
+					};
+				};
+			};
+			buildConfigurationList = 42E94AB21A65912C00F13C45 /* Build configuration list for PBXProject "MAIMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42E94AAE1A65912C00F13C45;
+			productRefGroup = 42E94AB81A65912C00F13C45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42E94AB61A65912C00F13C45 /* MAIMobile */,
+				42E94AD21A65912C00F13C45 /* MAIMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42E94AB51A65912C00F13C45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E94AC91A65912C00F13C45 /* Main.storyboard in Resources */,
+				42E94ACE1A65912C00F13C45 /* LaunchScreen.xib in Resources */,
+				42E94ACB1A65912C00F13C45 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E94AD11A65912C00F13C45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42E94AB31A65912C00F13C45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E94AC61A65912C00F13C45 /* SecondViewController.m in Sources */,
+				42E94AC01A65912C00F13C45 /* AppDelegate.m in Sources */,
+				42E94AC31A65912C00F13C45 /* FirstViewController.m in Sources */,
+				42E94ABD1A65912C00F13C45 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E94ACF1A65912C00F13C45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E94ADA1A65912C00F13C45 /* MAIMobileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42E94AD51A65912C00F13C45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42E94AB61A65912C00F13C45 /* MAIMobile */;
+			targetProxy = 42E94AD41A65912C00F13C45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42E94AC71A65912C00F13C45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E94AC81A65912C00F13C45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42E94ACC1A65912C00F13C45 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E94ACD1A65912C00F13C45 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42E94ADB1A65912C00F13C45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		42E94ADC1A65912C00F13C45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42E94ADE1A65912C00F13C45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MAIMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		42E94ADF1A65912C00F13C45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MAIMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		42E94AE11A65912C00F13C45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MAIMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAIMobile.app/MAIMobile";
+			};
+			name = Debug;
+		};
+		42E94AE21A65912C00F13C45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MAIMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAIMobile.app/MAIMobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42E94AB21A65912C00F13C45 /* Build configuration list for PBXProject "MAIMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E94ADB1A65912C00F13C45 /* Debug */,
+				42E94ADC1A65912C00F13C45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42E94ADD1A65912C00F13C45 /* Build configuration list for PBXNativeTarget "MAIMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E94ADE1A65912C00F13C45 /* Debug */,
+				42E94ADF1A65912C00F13C45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		42E94AE01A65912C00F13C45 /* Build configuration list for PBXNativeTarget "MAIMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E94AE11A65912C00F13C45 /* Debug */,
+				42E94AE21A65912C00F13C45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42E94AAF1A65912C00F13C45 /* Project object */;
+}
