@@ -26,28 +26,26 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2"]];
-//
-//    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue new] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        if (connectionError == nil)
-//        {
-//            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&connectionError];
-//            NSLog(@"data: %@", object);
-//        }
-//    }];
-
-
-//    [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {}];
-    
-//    [[Twitter sharedInstance] logInGuestWithCompletion:^(TWTRGuestSession *guestSession, NSError *error) {
-//        [[[Twitter sharedInstance] APIClient] loadTweetWithID:@"550263975154561025" completion:^(TWTRTweet *tweet, NSError *error) {
-//            TWTRTweetView *tweetView = [[TWTRTweetView alloc] initWithTweet:tweet style:TWTRTweetViewStyleRegular];
-//            [self.view addSubview:tweetView];
-//        }];
-//    }];
-
-    
+    [self getTwitterFeed];
 }
+
+- (void)getTwitterFeed {
+    NSInteger tweetsCount = 2;
+    NSString *maiTwitterURL = [NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=newsMAI&count=%ld", (long)tweetsCount];
+    
+    [[Twitter sharedInstance] logInGuestWithCompletion:^(TWTRGuestSession *guestSession, NSError *error) {
+        NSURLRequest *urlRequest = [[[Twitter sharedInstance] APIClient] URLRequestWithMethod:@"GET" URL:maiTwitterURL parameters:nil error:&error];
+        [[[Twitter sharedInstance] APIClient] sendTwitterRequest:urlRequest completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if (!connectionError) {
+                id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&connectionError];
+                NSLog(@"data: %@", object);
+            } else {
+                NSLog(@"Twitter seems to be offline");
+            }
+        }];
+    }];
+}
+
 /*
 #pragma mark - Navigation
 
