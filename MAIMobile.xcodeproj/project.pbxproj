@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2FE0E6151A6B1D8600663264 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0E6141A6B1D8600663264 /* OtherViewController.m */; };
-		4267E9501A6C22E0009DD00B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267E94D1A6C22E0009DD00B /* TwitterKit.framework */; };
+		42292D4A1A6C2CC60062890B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D481A6C2CC60062890B /* TwitterKit.framework */; };
+		42292D4B1A6C2CC60062890B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D491A6C2CC60062890B /* Fabric.framework */; };
 		4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */; };
-		4267E9521A6C22E0009DD00B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267E94F1A6C22E0009DD00B /* Fabric.framework */; };
 		42D15CC71A6C15E100CB795E /* tab_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D15CC41A6C15E100CB795E /* tab_map@2x.png */; };
 		42D15CC81A6C15E100CB795E /* tab_fac@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D15CC51A6C15E100CB795E /* tab_fac@2x.png */; };
 		42D15CC91A6C15E100CB795E /* tab_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D15CC61A6C15E100CB795E /* tab_news@2x.png */; };
@@ -38,9 +38,9 @@
 /* Begin PBXFileReference section */
 		2FE0E6131A6B1D8600663264 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		2FE0E6141A6B1D8600663264 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
-		4267E94D1A6C22E0009DD00B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		42292D481A6C2CC60062890B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		42292D491A6C2CC60062890B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
-		4267E94F1A6C22E0009DD00B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		42D15CC41A6C15E100CB795E /* tab_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_map@2x.png"; sourceTree = "<group>"; };
 		42D15CC51A6C15E100CB795E /* tab_fac@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_fac@2x.png"; sourceTree = "<group>"; };
 		42D15CC61A6C15E100CB795E /* tab_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_news@2x.png"; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4267E9501A6C22E0009DD00B /* TwitterKit.framework in Frameworks */,
-				4267E9521A6C22E0009DD00B /* Fabric.framework in Frameworks */,
+				42292D4A1A6C2CC60062890B /* TwitterKit.framework in Frameworks */,
+				42292D4B1A6C2CC60062890B /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,9 +85,9 @@
 		4267E9531A6C25BF009DD00B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4267E94D1A6C22E0009DD00B /* TwitterKit.framework */,
+				42292D481A6C2CC60062890B /* TwitterKit.framework */,
+				42292D491A6C2CC60062890B /* Fabric.framework */,
 				4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */,
-				4267E94F1A6C22E0009DD00B /* Fabric.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 3801dc707dccf565d5e0985f1ee09f0b159a050c c860413804fe3f3cb998c77f80677fd4398615795aa0a2e1597f00be6e5e051b";
+			shellScript = "./MAIMobile/Fabric.framework/run 3801dc707dccf565d5e0985f1ee09f0b159a050c c860413804fe3f3cb998c77f80677fd4398615795aa0a2e1597f00be6e5e051b";
 		};
 /* End PBXShellScriptBuildPhase section */
 
