@@ -9,8 +9,9 @@
 #import "DictionaryTableViewController.h"
 #import "DictionaryTableViewCell.h"
 #import "WordViewController.h"
+#import <Parse/Parse.h>
 @interface DictionaryTableViewController ()
-
+@property NSArray *words;
 @end
 
 @implementation DictionaryTableViewController
@@ -23,6 +24,17 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    PFQuery *query = [PFQuery queryWithClassName:@"SlangWord"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSMutableArray *array = [NSMutableArray new];
+        for (PFObject *obj in objects) {
+            NSDictionary *dic =  @{@"word" : obj[@"word"], @"description":obj[@"description"]};
+            [array addObject:dic];
+            
+        }
+        self.words = array;
+        [[self tableView] reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,14 +53,16 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 10;
+    return self.words.count;
 }
 
 
 - (DictionaryTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DictionaryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dictionaryCell" forIndexPath:indexPath];
-    cell.wordLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
-    cell.descriptionLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row * 100];
+    NSDictionary *dic = self.words[indexPath.row];
+    
+    cell.wordLabel.text = dic[@"word"];
+    cell.descriptionLabel.text = dic[@"description"];
     // Configure the cell...
     
     return cell;
