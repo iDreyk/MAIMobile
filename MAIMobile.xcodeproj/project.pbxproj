@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2FE0E6151A6B1D8600663264 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0E6141A6B1D8600663264 /* OtherViewController.m */; };
+		4267E9501A6C22E0009DD00B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267E94D1A6C22E0009DD00B /* TwitterKit.framework */; };
+		4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */; };
+		4267E9521A6C22E0009DD00B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267E94F1A6C22E0009DD00B /* Fabric.framework */; };
 		42D15CC71A6C15E100CB795E /* tab_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D15CC41A6C15E100CB795E /* tab_map@2x.png */; };
 		42D15CC81A6C15E100CB795E /* tab_fac@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D15CC51A6C15E100CB795E /* tab_fac@2x.png */; };
 		42D15CC91A6C15E100CB795E /* tab_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D15CC61A6C15E100CB795E /* tab_news@2x.png */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		2FE0E6131A6B1D8600663264 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		2FE0E6141A6B1D8600663264 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		4267E94D1A6C22E0009DD00B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
+		4267E94F1A6C22E0009DD00B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		42D15CC41A6C15E100CB795E /* tab_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_map@2x.png"; sourceTree = "<group>"; };
 		42D15CC51A6C15E100CB795E /* tab_fac@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_fac@2x.png"; sourceTree = "<group>"; };
 		42D15CC61A6C15E100CB795E /* tab_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_news@2x.png"; sourceTree = "<group>"; };
@@ -61,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4267E9501A6C22E0009DD00B /* TwitterKit.framework in Frameworks */,
+				4267E9521A6C22E0009DD00B /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +82,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4267E9531A6C25BF009DD00B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4267E94D1A6C22E0009DD00B /* TwitterKit.framework */,
+				4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */,
+				4267E94F1A6C22E0009DD00B /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		42D15CB41A6C143A00CB795E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +175,7 @@
 		42E94ABA1A65912C00F13C45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4267E9531A6C25BF009DD00B /* Frameworks */,
 				42D15CBD1A6C146B00CB795E /* Images */,
 				42E94ABB1A65912C00F13C45 /* Info.plist */,
 				42E94ABC1A65912C00F13C45 /* main.m */,
@@ -191,6 +210,7 @@
 				42E94AB31A65912C00F13C45 /* Sources */,
 				42E94AB41A65912C00F13C45 /* Frameworks */,
 				42E94AB51A65912C00F13C45 /* Resources */,
+				4267E94C1A6C22C3009DD00B /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -261,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */,
 				42E94AC91A65912C00F13C45 /* Main.storyboard in Resources */,
 				42D15CC91A6C15E100CB795E /* tab_news@2x.png in Resources */,
 				42E94ACE1A65912C00F13C45 /* LaunchScreen.xib in Resources */,
@@ -279,6 +300,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4267E94C1A6C22C3009DD00B /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 3801dc707dccf565d5e0985f1ee09f0b159a050c c860413804fe3f3cb998c77f80677fd4398615795aa0a2e1597f00be6e5e051b";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42E94AB31A65912C00F13C45 /* Sources */ = {
@@ -411,6 +449,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MAIMobile",
+				);
 				INFOPLIST_FILE = MAIMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -422,6 +464,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MAIMobile",
+				);
 				INFOPLIST_FILE = MAIMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
