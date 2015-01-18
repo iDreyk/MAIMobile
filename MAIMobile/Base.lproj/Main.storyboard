@@ -163,17 +163,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAk-ab-9SH">
-                                <rect key="frame" x="137" y="130" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAk-ab-9SH">
+                                <rect key="frame" x="16" y="109" width="288" height="30"/>
+                                <state key="normal" title="Словарь терминов МАИ" image="first">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BJ8-DD-fWz" kind="push" id="hqF-F5-s0X"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-ws-siv">
-                                <rect key="frame" x="137" y="198" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-ws-siv">
+                                <rect key="frame" x="16" y="147" width="288" height="30"/>
+                                <state key="normal" title="Об институте" image="second">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="rWx-3X-wGt" kind="push" id="Npa-sd-F6B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOz-7b-Qjw">
+                                <rect key="frame" x="16" y="185" width="288" height="30"/>
+                                <state key="normal" title="МАИ в интернете" image="first">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="85F-rs-Y0t" kind="push" id="k0X-YF-T0L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-6o-KkZ">
+                                <rect key="frame" x="16" y="223" width="288" height="30"/>
+                                <state key="normal" title="О программе" image="second">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="e26-V1-rRg" kind="push" id="98A-EE-yPK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,6 +211,146 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kxm-rV-Cwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="877" y="1196"/>
+        </scene>
+        <!--Об институте-->
+        <scene sceneID="1Af-jA-d9K">
+            <objects>
+                <viewController title="Об институте" id="rWx-3X-wGt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q8R-V6-Cgx"/>
+                        <viewControllerLayoutGuide type="bottom" id="PoT-7I-bp1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zeU-of-5tU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Об институте" id="Ihb-bN-U3W"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4h-Ux-i8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="1495"/>
+        </scene>
+        <!--МАИ в интернете-->
+        <scene sceneID="Dfr-dN-gcY">
+            <objects>
+                <viewController title="МАИ в интернете" id="85F-rs-Y0t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bLU-ug-PjO"/>
+                        <viewControllerLayoutGuide type="bottom" id="W6a-qA-mEC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s71-t7-g9n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="МАИ в интернете" id="Jwk-4n-wDf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tr3-mS-09x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="2130"/>
+        </scene>
+        <!--О программе-->
+        <scene sceneID="iWS-s4-bS3">
+            <objects>
+                <viewController title="О программе" id="e26-V1-rRg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LVR-mp-hEV"/>
+                        <viewControllerLayoutGuide type="bottom" id="rni-KS-LvH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qyD-zj-fAT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="О программе" id="B2S-fH-y3N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPc-C3-Fyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="2769"/>
+        </scene>
+        <!--Словарь-->
+        <scene sceneID="7fW-HV-fOK">
+            <objects>
+                <tableViewController title="Словарь" id="BJ8-DD-fWz" customClass="DictionaryTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r4x-Ww-I3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dictionaryCell" id="Gwr-Hx-TOv" customClass="DictionaryTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gwr-Hx-TOv" id="gx4-ra-8vv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-jf-euS">
+                                            <rect key="frame" x="8" y="0.0" width="279" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3R-fV-vck">
+                                            <rect key="frame" x="8" y="23" width="279" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="Y3R-fV-vck" id="h7j-Rx-nZo"/>
+                                    <outlet property="wordLabel" destination="Uxb-jf-euS" id="5zC-0T-JM2"/>
+                                    <segue destination="jlZ-IH-o3B" kind="push" identifier="descriptionWordSeque" id="OdS-uU-nwE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BJ8-DD-fWz" id="hP7-kB-iIg"/>
+                            <outlet property="delegate" destination="BJ8-DD-fWz" id="IYc-ei-NYb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Словарь" id="z6h-a4-2IG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0m-dh-1sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="863"/>
+        </scene>
+        <!--Word View Controller-->
+        <scene sceneID="324-7Q-dy9">
+            <objects>
+                <viewController id="jlZ-IH-o3B" customClass="WordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bvs-1i-0pt"/>
+                        <viewControllerLayoutGuide type="bottom" id="jed-ZN-mGi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kop-zG-XcB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVD-iX-5de">
+                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdM-c9-aut">
+                                <rect key="frame" x="16" y="101" width="288" height="410"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6st-7s-sGB"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="QdM-c9-aut" id="i9o-GC-Xef"/>
+                        <outlet property="wordLabel" destination="FVD-iX-5de" id="74D-oC-hXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IfN-Eu-nD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="863"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -207,6 +375,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
         <image name="tab_fac.png" width="64" height="64"/>
         <image name="tab_map.png" width="64" height="64"/>
         <image name="tab_news.png" width="64" height="64"/>
