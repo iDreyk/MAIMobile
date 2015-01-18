@@ -5,33 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="hCp-lE-NTY">
-            <objects>
-                <tableViewController id="HGj-t1-oNJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="agO-AF-qNu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZHv-7M-6dg">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHv-7M-6dg" id="rP8-pk-SJi">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="HGj-t1-oNJ" id="oB6-1A-3nx"/>
-                            <outlet property="delegate" destination="HGj-t1-oNJ" id="Rm0-5p-2ur"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="9WN-Ci-leO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1oh-Du-cdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="902" y="-853"/>
-        </scene>
         <!--News-->
         <scene sceneID="2n5-cY-ISQ">
             <objects>
@@ -42,12 +15,31 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="HGj-t1-oNJ" kind="relationship" relationship="rootViewController" id="QSe-Qd-MMD"/>
+                        <segue destination="iAV-Eu-dYr" kind="relationship" relationship="rootViewController" id="yTi-sc-tSP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KhD-Rz-a2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="488" y="-853"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="wew-Os-Wp5">
+            <objects>
+                <viewController id="iAV-Eu-dYr" customClass="NewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Ot-SW-6tz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y6L-zN-d07"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fZt-la-EJA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="556-0b-h5E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1Z-bU-tN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-853"/>
         </scene>
         <!--Facs View Controller-->
         <scene sceneID="wg7-f3-ORb">

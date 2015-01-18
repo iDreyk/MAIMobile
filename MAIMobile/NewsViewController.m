@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +24,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2"]];
+
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue new] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError == nil)
+        {
+            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&connectionError];
+            NSLog(@"data: %@", object);
+        }
+    }];
+    
+}
 /*
 #pragma mark - Navigation
 
