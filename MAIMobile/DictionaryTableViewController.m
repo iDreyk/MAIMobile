@@ -99,6 +99,11 @@
 
     if ([[segue identifier] isEqualToString:@"descriptionWordSeque"])
     {
+        DictionaryTableViewCell *cell = sender;
+        WordViewController *wvc = segue.destinationViewController;
+        NSLog(@"%@", wvc);
+        wvc.word = @{@"word" : cell.wordLabel.text, @"description":cell.descriptionLabel.text};
+      
     }
 }
 

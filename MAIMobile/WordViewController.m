@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.descriptionLabel.text = self.word[@"description"];
+    self.wordLabel.text = self.word[@"word"];
 }
 
 - (void)didReceiveMemoryWarning {

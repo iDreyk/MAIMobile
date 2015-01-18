@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
-
+#import <Parse/Parse.h>
 @interface AppDelegate ()
 
 @end
@@ -18,6 +18,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"rVpjsr245kbCgKD6Z0r6VhNiIVvL2AMVSq3Q0cHl"
+                  clientKey:@"3z9FI0hfwlPvsl2r7vbyH9tdbjTIPBXHgqxH2zTQ"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [Fabric with:@[TwitterKit]];
     return YES;
 }
