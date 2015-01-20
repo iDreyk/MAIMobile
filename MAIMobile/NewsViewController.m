@@ -96,24 +96,16 @@
     } else {
         // days=1-5
         if (nrDays > 0) {
-            if (nrDays == 1) {
-                time = @"1 day ago";
-            } else {
-                time = [NSString stringWithFormat:@"%d days ago", nrDays];
-            }
+            time = [NSString stringWithFormat:@"%d d", nrDays];
         } else {
             if (nrHours == 0) {
-                if (nrMinutes < 2) {
-                    time = @"just now";
+                if (nrMinutes == 0) {
+                    time = [NSString stringWithFormat:@"%d s", nrSeconds];
                 } else {
-                    time = [NSString stringWithFormat:@"%d minutes ago", nrMinutes];
+                    time = [NSString stringWithFormat:@"%d m", nrMinutes];   
                 }
             } else { // days=0 hours!=0
-                if (nrHours == 1) {
-                    time = @"1 hour ago";
-                } else {
-                    time = [NSString stringWithFormat:@"%d hours ago", nrHours];
-                }
+                time = [NSString stringWithFormat:@"%d h", nrHours];
             }
         }
     }
@@ -163,7 +155,7 @@
     return date;
 }
 
--(void)getImageFromUrl:(NSString*)imageUrl asynchronouslyForImageView:(UIImageView*)imageView andKey:(NSString*)key{
+- (void)getImageFromUrl:(NSString*)imageUrl asynchronouslyForImageView:(UIImageView*)imageView andKey:(NSString*)key{
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -184,6 +176,18 @@
             }
         });
     });
+}
+
+- (CGFloat)heightForTextViewRectWithText:(NSString *)text{
+    UIFont *font = [UIFont systemFontOfSize:13.0f];
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          font, NSFontAttributeName, nil];
+    
+    CGRect frame = [text boundingRectWithSize:CGSizeMake(150, 90.0)
+                                      options:NSStringDrawingUsesLineFragmentOrigin
+                                   attributes:attributesDictionary
+                                      context:nil];
+    return frame.size.height + 10;
 }
 
 #pragma mark - API Calls
@@ -227,7 +231,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 130;
+    NSString * yourText = _tweetsArray[indexPath.row][@"text"];
+    return 45 + [self heightForTextViewRectWithText:yourText];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -241,20 +246,26 @@
     {
         cell = [[TweetCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.parentViewController = self;
+        cell.textLabel.font = [UIFont systemFontOfSize:13];
+        cell.textLabel.numberOfLines = 0;
     }
 
     NSString *userName = _tweetsArray[row][@"user"][@"name"];
     NSDate *datePosted = [self dateForTweet:row];
+    NSString *tweetText = _tweetsArray[row][@"text"];
     
     cell.userNameLabel.text = userName;
     cell.dateLabel.text = [self getTimeAsString:datePosted];
-    cell.tweetTextView.text = _tweetsArray[row][@"text"];
+    cell.tweetTextLabel.text = tweetText;
+    
+    CGRect frame = cell.tweetTextLabel.frame;
+    frame.size.height = [self heightForTextViewRectWithText:tweetText];
+    cell.tweetTextLabel.frame = frame;
     
     if (self.imagesDictionary[userName]) {
         cell.profileImageView.image = self.imagesDictionary[userName];
     } else {
         NSString* imageUrl = _tweetsArray[row][@"user"][@"profile_image_url"];
-        
         [self getImageFromUrl:imageUrl asynchronouslyForImageView:cell.profileImageView andKey:userName];
     }
     
@@ -272,7 +283,6 @@
     WebViewController *wv = [[WebViewController alloc] init];
     wv.url = URL;
     [self.navigationController pushViewController:wv animated:YES];
-
 }
 
 @end

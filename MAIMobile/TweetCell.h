@@ -10,7 +10,7 @@
 
 @interface TweetCell : UITableViewCell <UITextViewDelegate>
 
-@property (nonatomic, strong) UITextView *tweetTextView;
+@property (nonatomic, strong) UILabel *tweetTextLabel;
 @property (nonatomic, strong) UILabel *userNameLabel;
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UIViewController *parentViewController;
