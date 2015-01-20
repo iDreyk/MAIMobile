@@ -17,7 +17,9 @@
 @property (nonatomic, strong) UITableViewController *tableViewController;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSMutableArray *tweetsArray;
-@property (strong, atomic) NSMutableDictionary *imagesDictionary;
+@property (atomic, strong) NSMutableDictionary *imagesDictionary;
+@property (nonatomic, strong) NSString *twitterFeedPath;
+@property (nonatomic, strong) NSString *usersImagesPath;
 
 @end
 
@@ -25,6 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    _twitterFeedPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"twitterFeed.out"];
+    _usersImagesPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"usersPics.out"];
     
     _tweetsArray = [NSMutableArray array];
     _imagesDictionary = [NSMutableDictionary dictionary];
@@ -37,7 +43,19 @@
     
     _tableViewController.tableView = _newsTableView;
 
+    NSNotificationCenter* defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self
+                      selector:@selector(saveAllData:)
+                          name:UIApplicationWillTerminateNotification
+                        object:nil];
+
+    [defaultCenter addObserver:self
+                      selector:@selector(saveAllData:)
+                          name:UIApplicationDidEnterBackgroundNotification
+                        object:nil];
+    
     [self initTableRefreshControl];
+    [self loadData];
     [self getTwitterFeed];
 }
 
@@ -54,6 +72,10 @@
 }
 
 #pragma mark - Methods
+
+- (void)saveAllData:(NSNotification *)notification{
+    [self saveData];
+}
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [self getTwitterFeed];
@@ -147,7 +169,6 @@
     NSTimeZone *gmt = [NSTimeZone timeZoneForSecondsFromGMT:2];
     [components setTimeZone:gmt];
     
-    
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     [calendar setTimeZone:[NSTimeZone systemTimeZone]];
     NSDate *date = [calendar dateFromComponents:components];
@@ -158,7 +179,6 @@
 - (void)getImageFromUrl:(NSString*)imageUrl asynchronouslyForImageView:(UIImageView*)imageView andKey:(NSString*)key{
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
         NSURL *url = [NSURL URLWithString:imageUrl];
         
         __block NSData *imageData;
@@ -167,9 +187,7 @@
             imageData =[NSData dataWithContentsOfURL:url];
             
             if(imageData){
-                
                 [self.imagesDictionary setObject:[UIImage imageWithData:imageData] forKey:key];
-                
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     imageView.image = self.imagesDictionary[key];
                 });
@@ -178,7 +196,7 @@
     });
 }
 
-- (CGFloat)heightForTextViewRectWithText:(NSString *)text{
+- (CGFloat)heightForTextViewRectWithText:(NSString *)text {
     UIFont *font = [UIFont systemFontOfSize:13.0f];
     NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                           font, NSFontAttributeName, nil];
@@ -190,6 +208,43 @@
     return frame.size.height + 10;
 }
 
+#pragma mark - Data storage
+
+- (void)saveData {
+    NSData *twData = [NSKeyedArchiver archivedDataWithRootObject:_tweetsArray];
+    [twData writeToFile:_twitterFeedPath atomically:YES];
+    
+    NSData *imData = [NSKeyedArchiver archivedDataWithRootObject:_imagesDictionary];
+    [imData writeToFile:_usersImagesPath atomically:YES];
+}
+
+- (void)loadData {
+    BOOL success = NO;
+    
+    NSData *twData = [NSData dataWithContentsOfFile:_twitterFeedPath];
+    if (twData) {
+        NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:twData];
+        
+        if (array.count > 0) {
+            _tweetsArray = [array mutableCopy];
+            success = YES;
+        }
+    }
+    
+    NSData *imData = [NSData dataWithContentsOfFile:_usersImagesPath];
+    if (imData) {
+        NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:imData];
+        
+        if (dict.count > 0) {
+            _imagesDictionary = [dict mutableCopy];
+            success = YES;
+        }
+    }
+    if (success == YES) {
+        [self.tableViewController.tableView reloadData];
+    }
+}
+
 #pragma mark - API Calls
 
 - (void)getTwitterFeed {
@@ -197,26 +252,32 @@
     NSString *maiTwitterURL = [NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=newsMAI&count=%ld", (long)tweetsCount];
     
     [[Twitter sharedInstance] logInGuestWithCompletion:^(TWTRGuestSession *guestSession, NSError *error) {
-        NSURLRequest *urlRequest = [[[Twitter sharedInstance] APIClient] URLRequestWithMethod:@"GET" URL:maiTwitterURL parameters:nil error:&error];
-        [[[Twitter sharedInstance] APIClient] sendTwitterRequest:urlRequest completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-            if (!connectionError) {
-                id parsedData = data ? [self parseJSON:data] : nil;
-                
-                if (parsedData) {
-                    [self fillDataSource:parsedData];
+        if (!error) {
+            NSURLRequest *urlRequest = [[[Twitter sharedInstance] APIClient] URLRequestWithMethod:@"GET" URL:maiTwitterURL parameters:nil error:&error];
+            [[[Twitter sharedInstance] APIClient] sendTwitterRequest:urlRequest completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                if (!connectionError) {
+                    id parsedData = data ? [self parseJSON:data] : nil;
                     
-                    [_refreshControl endRefreshing];
-                    [self.tableViewController.tableView reloadData];
-                } else{
-                    NSLog(@"Something went wrong");
+                    if (parsedData) {
+                        [self fillDataSource:parsedData];
+                        
+                        [_refreshControl endRefreshing];
+                        [self.tableViewController.tableView reloadData];
+                    } else{
+                        NSLog(@"Something went wrong");
+                        [_refreshControl endRefreshing];
+                    }
+                } else {
+                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Twitter seems to be offline" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                    [av show];
                     [_refreshControl endRefreshing];
                 }
-            } else {
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Twitter seems to be offline" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
-                [av show];
-                [_refreshControl endRefreshing];
-            }
-        }];
+            }];
+        } else{
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internet connection seems to be offline" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+            [av show];
+            [_refreshControl endRefreshing];
+        }
     }];
 }
 
@@ -240,7 +301,7 @@
     
     static NSString *identifier = @"NewsCellId";
     
-    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    TweetCell *cell = (TweetCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil)
     {
