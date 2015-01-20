@@ -8,6 +8,8 @@
 
 #import "NewsViewController.h"
 #import <TwitterKit/TwitterKit.h>
+#import "TweetCell.h"
+#import "WebViewController.h"
 
 @interface NewsViewController ()
 
@@ -15,6 +17,7 @@
 @property (nonatomic, strong) UITableViewController *tableViewController;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSMutableArray *tweetsArray;
+@property (strong, atomic) NSMutableDictionary *imagesDictionary;
 
 @end
 
@@ -22,8 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    _tweetsArray = [NSMutableArray new];
+    
+    _tweetsArray = [NSMutableArray array];
+    _imagesDictionary = [NSMutableDictionary dictionary];
     
     _newsTableView.delegate = self;
     _newsTableView.dataSource = self;
@@ -39,12 +43,11 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Init
 
--(void) initTableRefreshControl{
+- (void)initTableRefreshControl{
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     _tableViewController.refreshControl = _refreshControl;
@@ -56,7 +59,7 @@
     [self getTwitterFeed];
 }
 
--(id) parseJSON:(NSData*) responseData
+- (id)parseJSON:(NSData*) responseData
 {
     id result;
     Class jsonSerializationClass = NSClassFromString(@"NSJSONSerialization");
@@ -68,11 +71,119 @@
     return result;
 }
 
--(void) fillDataSource:(id)parsedData{
+- (void)fillDataSource:(id)parsedData{
     [_tweetsArray removeAllObjects];
     for (NSDictionary *dict in parsedData) {
-        [_tweetsArray addObject:dict[@"text"]];
+        [_tweetsArray addObject:dict];
     }
+}
+
+- (NSString*)getTimeAsString:(NSDate *)lastDate {
+    NSTimeInterval dateDiff =  [[NSDate date] timeIntervalSinceDate:lastDate];
+    
+    int nrSeconds = dateDiff;//components.second;
+    int nrMinutes = nrSeconds / 60;
+    int nrHours = nrSeconds / 3600;
+    int nrDays = dateDiff / 86400; //components.day;
+    
+    NSString *time;
+    if (nrDays > 5){
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateStyle:NSDateFormatterShortStyle];
+        [dateFormat setTimeStyle:NSDateFormatterNoStyle];
+        
+        time = [NSString stringWithFormat:@"%@", [dateFormat stringFromDate:lastDate]];
+    } else {
+        // days=1-5
+        if (nrDays > 0) {
+            if (nrDays == 1) {
+                time = @"1 day ago";
+            } else {
+                time = [NSString stringWithFormat:@"%d days ago", nrDays];
+            }
+        } else {
+            if (nrHours == 0) {
+                if (nrMinutes < 2) {
+                    time = @"just now";
+                } else {
+                    time = [NSString stringWithFormat:@"%d minutes ago", nrMinutes];
+                }
+            } else { // days=0 hours!=0
+                if (nrHours == 1) {
+                    time = @"1 hour ago";
+                } else {
+                    time = [NSString stringWithFormat:@"%d hours ago", nrHours];
+                }
+            }
+        }
+    }
+    
+    return [NSString stringWithFormat:NSLocalizedString(@"%@", @"label"), time];
+}
+
+- (NSDate *)dateForTweet:(NSInteger)tweetNumber{
+    NSArray *days = [NSArray arrayWithObjects:@"Mon ", @"Tue ", @"Wed ", @"Thu ", @"Fri ", @"Sat ", @"Sun ", nil];
+    NSArray *calendarMonths = [NSArray arrayWithObjects:@"Jan", @"Feb", @"Mar",@"Apr", @"May", @"Jun", @"Jul", @"Aug", @"Sep", @"Oct", @"Nov", @"Dec", nil];
+    NSString *dateStr = [_tweetsArray[tweetNumber] objectForKey:@"created_at"];
+    
+    for (NSString *day in days) {
+        if ([dateStr rangeOfString:day].location == 0) {
+            dateStr = [dateStr stringByReplacingOccurrencesOfString:day withString:@""];
+            break;
+        }
+    }
+    
+    NSArray *dateArray = [dateStr componentsSeparatedByString:@" "];
+    NSArray *hourArray = [[dateArray objectAtIndex:2] componentsSeparatedByString:@":"];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    
+    NSString *aux = [dateArray objectAtIndex:0];
+    int month = 0;
+    for (NSString *m in calendarMonths) {
+        month++;
+        if ([m isEqualToString:aux]) {
+            break;
+        }
+    }
+    components.month = month;
+    components.day = [[dateArray objectAtIndex:1] intValue];
+    components.hour = [[hourArray objectAtIndex:0] intValue];
+    components.minute = [[hourArray objectAtIndex:1] intValue];
+    components.second = [[hourArray objectAtIndex:2] intValue];
+    components.year = [[dateArray objectAtIndex:4] intValue];
+    
+    NSTimeZone *gmt = [NSTimeZone timeZoneForSecondsFromGMT:2];
+    [components setTimeZone:gmt];
+    
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [calendar setTimeZone:[NSTimeZone systemTimeZone]];
+    NSDate *date = [calendar dateFromComponents:components];
+    
+    return date;
+}
+
+-(void)getImageFromUrl:(NSString*)imageUrl asynchronouslyForImageView:(UIImageView*)imageView andKey:(NSString*)key{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSURL *url = [NSURL URLWithString:imageUrl];
+        
+        __block NSData *imageData;
+        
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            imageData =[NSData dataWithContentsOfURL:url];
+            
+            if(imageData){
+                
+                [self.imagesDictionary setObject:[UIImage imageWithData:imageData] forKey:key];
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    imageView.image = self.imagesDictionary[key];
+                });
+            }
+        });
+    });
 }
 
 #pragma mark - API Calls
@@ -97,7 +208,8 @@
                     [_refreshControl endRefreshing];
                 }
             } else {
-                NSLog(@"Twitter seems to be offline");
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Twitter seems to be offline" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                [av show];
                 [_refreshControl endRefreshing];
             }
         }];
@@ -111,35 +223,56 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_tweetsArray count];    //count number of row from counting array hear cataGorry is An Array
+    return [_tweetsArray count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 130;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *MyIdentifier = @"MyIdentifier";
+    NSInteger row = indexPath.row;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    static NSString *identifier = @"NewsCellId";
+    
+    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:MyIdentifier];
+        cell = [[TweetCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.parentViewController = self;
+    }
+
+    NSString *userName = _tweetsArray[row][@"user"][@"name"];
+    NSDate *datePosted = [self dateForTweet:row];
+    
+    cell.userNameLabel.text = userName;
+    cell.dateLabel.text = [self getTimeAsString:datePosted];
+    cell.tweetTextView.text = _tweetsArray[row][@"text"];
+    
+    if (self.imagesDictionary[userName]) {
+        cell.profileImageView.image = self.imagesDictionary[userName];
+    } else {
+        NSString* imageUrl = _tweetsArray[row][@"user"][@"profile_image_url"];
+        
+        [self getImageFromUrl:imageUrl asynchronouslyForImageView:cell.profileImageView andKey:userName];
     }
     
-    // Here we use the provided setImageWithURL: method to load the web image
-    // Ensure you use a placeholder image otherwise cells will be initialized with no image
-//    [cell.imageView setImageWithURL:[NSURL URLWithString:@"http://example.com/image.jpg"]
-//                   placeholderImage:[UIImage imageNamed:@"placeholder"]];
-    cell.textLabel.text = _tweetsArray[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://twitter.com/newsMAI/status/%@", _tweetsArray[indexPath.row][@"id_str"]];
+    
+    NSString *urlAddress = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *URL = [NSURL URLWithString:urlAddress];
+    
+    WebViewController *wv = [[WebViewController alloc] init];
+    wv.url = URL;
+    [self.navigationController pushViewController:wv animated:YES];
+
 }
 
 @end
