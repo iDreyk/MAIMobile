@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FacsViewController : UIViewController
+@interface FacsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
