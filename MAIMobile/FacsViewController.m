@@ -7,6 +7,7 @@
 //
 
 #import "FacsViewController.h"
+#import "RectorateTableViewController.h"
 
 @interface FacsViewController ()
 
@@ -121,6 +122,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 0) {
+        RectorateTableViewController *vc = [[RectorateTableViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     
 //    NSString *urlString = [NSString stringWithFormat:@"https://twitter.com/newsMAI/status/%@", _tweetsArray[indexPath.row][@"id_str"]];
 //    

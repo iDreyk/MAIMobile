@@ -14,6 +14,7 @@
 //singleton
 + (id)sharedInstance;
 
-- (void)getWordsDictionaryWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
+- (void)getSlangWordsWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
+- (void)getRectorateDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
 
 @end

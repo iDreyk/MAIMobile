@@ -34,6 +34,8 @@
 		420C2FA31A6FFC6100DCFF4A /* fac1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2FA01A6FFC6100DCFF4A /* fac1@2x.jpg */; };
 		420C2FA41A6FFC6100DCFF4A /* fac3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2FA11A6FFC6100DCFF4A /* fac3@2x.jpg */; };
 		420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FA61A7006B900DCFF4A /* ParseManager.m */; };
+		420C2FAB1A700E1500DCFF4A /* RectorateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */; };
+		420C2FAE1A70133000DCFF4A /* RectorateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAD1A70133000DCFF4A /* RectorateCell.m */; };
 		42292D4A1A6C2CC60062890B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D481A6C2CC60062890B /* TwitterKit.framework */; };
 		42292D4B1A6C2CC60062890B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D491A6C2CC60062890B /* Fabric.framework */; };
 		4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */; };
@@ -100,6 +102,10 @@
 		420C2FA11A6FFC6100DCFF4A /* fac3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fac3@2x.jpg"; sourceTree = "<group>"; };
 		420C2FA51A7006B900DCFF4A /* ParseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseManager.h; sourceTree = "<group>"; };
 		420C2FA61A7006B900DCFF4A /* ParseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseManager.m; sourceTree = "<group>"; };
+		420C2FA91A700E1500DCFF4A /* RectorateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectorateTableViewController.h; sourceTree = "<group>"; };
+		420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectorateTableViewController.m; sourceTree = "<group>"; };
+		420C2FAC1A70133000DCFF4A /* RectorateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectorateCell.h; sourceTree = "<group>"; };
+		420C2FAD1A70133000DCFF4A /* RectorateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectorateCell.m; sourceTree = "<group>"; };
 		42292D481A6C2CC60062890B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		42292D491A6C2CC60062890B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -164,6 +170,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420C2FA81A700B3C00DCFF4A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				427688341A6E8EDB00F2A9EE /* TweetCell.h */,
+				427688351A6E8EDB00F2A9EE /* TweetCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		420C2FAF1A70133400DCFF4A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				420C2FAC1A70133000DCFF4A /* RectorateCell.h */,
+				420C2FAD1A70133000DCFF4A /* RectorateCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		4267E9531A6C25BF009DD00B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,8 +288,7 @@
 			children = (
 				42D15CCD1A6C166200CB795E /* NewsViewController.h */,
 				42D15CCE1A6C166200CB795E /* NewsViewController.m */,
-				427688341A6E8EDB00F2A9EE /* TweetCell.h */,
-				427688351A6E8EDB00F2A9EE /* TweetCell.m */,
+				420C2FA81A700B3C00DCFF4A /* Cells */,
 			);
 			name = "1. News";
 			sourceTree = "<group>";
@@ -275,6 +298,9 @@
 			children = (
 				42D15CD11A6C168700CB795E /* FacsViewController.h */,
 				42D15CD21A6C168700CB795E /* FacsViewController.m */,
+				420C2FA91A700E1500DCFF4A /* RectorateTableViewController.h */,
+				420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */,
+				420C2FAF1A70133400DCFF4A /* Cells */,
 			);
 			name = "2. Facs";
 			sourceTree = "<group>";
@@ -476,11 +502,13 @@
 				427688361A6E8EDB00F2A9EE /* TweetCell.m in Sources */,
 				2F83510A1A6C2E9E00C10793 /* DictionaryTableViewCell.m in Sources */,
 				2FE0E6151A6B1D8600663264 /* OtherViewController.m in Sources */,
+				420C2FAE1A70133000DCFF4A /* RectorateCell.m in Sources */,
 				2F83510B1A6C2E9E00C10793 /* WordViewController.m in Sources */,
 				42E94AC01A65912C00F13C45 /* AppDelegate.m in Sources */,
 				4202E60B1A6EB0150007B587 /* MainTabBarController.m in Sources */,
 				2FF1435C1A6FA8CC002366E6 /* MAIWebTableViewController.m in Sources */,
 				427688441A6EA3C600F2A9EE /* WebViewController.m in Sources */,
+				420C2FAB1A700E1500DCFF4A /* RectorateTableViewController.m in Sources */,
 				42D15CD31A6C168700CB795E /* FacsViewController.m in Sources */,
 				42E94ABD1A65912C00F13C45 /* main.m in Sources */,
 				42D15CCF1A6C166200CB795E /* NewsViewController.m in Sources */,

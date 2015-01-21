@@ -187,9 +187,11 @@
             imageData =[NSData dataWithContentsOfURL:url];
             
             if(imageData){
-                [self.imagesDictionary setObject:[UIImage imageWithData:imageData] forKey:key];
+                if (_imagesDictionary[key] == nil) {
+                    [_imagesDictionary setObject:[UIImage imageWithData:imageData] forKey:key];
+                }
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    imageView.image = self.imagesDictionary[key];
+                    imageView.image = _imagesDictionary[key];
                 });
             }
         });

@@ -101,11 +101,40 @@
                     <navigationItem key="navigationItem" id="Yr7-JK-TwE"/>
                     <connections>
                         <outlet property="facsTableView" destination="wcg-6p-LVA" id="C7r-XD-wht"/>
+                        <segue destination="0I5-5v-RbD" kind="push" id="XM2-Yv-G8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="-169"/>
+        </scene>
+        <!--Rectorate Table View Controller-->
+        <scene sceneID="Gf0-PW-1su">
+            <objects>
+                <tableViewController id="0I5-5v-RbD" customClass="RectorateTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="sXG-do-49b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rectorateCell" rowHeight="60" id="hTr-Ko-bhL" customClass="RectorateCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hTr-Ko-bhL" id="rBZ-Mq-9ar">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="0I5-5v-RbD" id="Sy1-D3-gB7"/>
+                            <outlet property="delegate" destination="0I5-5v-RbD" id="pnx-s2-wjv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="22Z-YZ-gEm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCy-h0-Mbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1518" y="-169"/>
         </scene>
         <!--Faculties-->
         <scene sceneID="a1a-yi-aOx">

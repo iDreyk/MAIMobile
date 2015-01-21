@@ -24,13 +24,12 @@
 }
 
 
-- (void)getWordsDictionaryWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
+- (void)getSlangWordsWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"SlangWord"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);
-            return;
-        }
+            return;        }
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
@@ -41,5 +40,28 @@
         callback(NO, array);
     }];
 }
+
+- (void)getRectorateDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
+    PFQuery *query = [PFQuery queryWithClassName:@"Management"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            callback(YES, nil);
+            return;
+        }
+        
+        NSMutableArray *array = [NSMutableArray new];
+        for (PFObject *obj in objects) {
+            NSDictionary *dic =  @{@"name" : obj[@"name"],
+                                   @"job":obj[@"job"],
+                                   @"place":obj[@"place"],
+                                   @"phone":obj[@"phone"],
+                                   @"image":obj[@"image"]};
+            [array addObject:dic];
+            
+        }
+        callback(NO, array);
+    }];
+}
+
 
 @end
