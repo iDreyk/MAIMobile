@@ -33,6 +33,7 @@
 		420C2FA21A6FFC6100DCFF4A /* fac2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2F9F1A6FFC6100DCFF4A /* fac2@2x.jpg */; };
 		420C2FA31A6FFC6100DCFF4A /* fac1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2FA01A6FFC6100DCFF4A /* fac1@2x.jpg */; };
 		420C2FA41A6FFC6100DCFF4A /* fac3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2FA11A6FFC6100DCFF4A /* fac3@2x.jpg */; };
+		420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FA61A7006B900DCFF4A /* ParseManager.m */; };
 		42292D4A1A6C2CC60062890B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D481A6C2CC60062890B /* TwitterKit.framework */; };
 		42292D4B1A6C2CC60062890B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D491A6C2CC60062890B /* Fabric.framework */; };
 		4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */; };
@@ -97,6 +98,8 @@
 		420C2F9F1A6FFC6100DCFF4A /* fac2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fac2@2x.jpg"; sourceTree = "<group>"; };
 		420C2FA01A6FFC6100DCFF4A /* fac1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fac1@2x.jpg"; sourceTree = "<group>"; };
 		420C2FA11A6FFC6100DCFF4A /* fac3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fac3@2x.jpg"; sourceTree = "<group>"; };
+		420C2FA51A7006B900DCFF4A /* ParseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseManager.h; sourceTree = "<group>"; };
+		420C2FA61A7006B900DCFF4A /* ParseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseManager.m; sourceTree = "<group>"; };
 		42292D481A6C2CC60062890B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		42292D491A6C2CC60062890B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 			children = (
 				427688421A6EA3C600F2A9EE /* WebViewController.h */,
 				427688431A6EA3C600F2A9EE /* WebViewController.m */,
+				420C2FA51A7006B900DCFF4A /* ParseManager.h */,
+				420C2FA61A7006B900DCFF4A /* ParseManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				42D15CCF1A6C166200CB795E /* NewsViewController.m in Sources */,
 				2FF1435F1A6FA8DA002366E6 /* AboutTableViewController.m in Sources */,
 				2F8351091A6C2E9E00C10793 /* DictionaryTableViewController.m in Sources */,
+				420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
