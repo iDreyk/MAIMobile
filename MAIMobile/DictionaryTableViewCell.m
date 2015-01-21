@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    _wordLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

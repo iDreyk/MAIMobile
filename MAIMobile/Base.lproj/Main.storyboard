@@ -179,48 +179,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAk-ab-9SH">
-                                <rect key="frame" x="16" y="109" width="288" height="30"/>
-                                <state key="normal" title="Словарь терминов МАИ" image="first">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAk-ab-9SH">
+                                <rect key="frame" x="16" y="90" width="288" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Словарь терминов МАИ" image="Book-Open">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BJ8-DD-fWz" kind="push" id="hqF-F5-s0X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-ws-siv">
-                                <rect key="frame" x="16" y="147" width="288" height="30"/>
-                                <state key="normal" title="Об институте" image="second">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOz-7b-Qjw">
+                                <rect key="frame" x="16" y="190" width="288" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="МАИ в интернете" image="Web">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RYV-KD-6PV" kind="push" id="9yt-EI-6td"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-6o-KkZ">
+                                <rect key="frame" x="16" y="240" width="288" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="О программе" image="Message-Information">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WSg-jK-ksF" kind="push" id="oHt-6T-lkh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-ws-siv">
+                                <rect key="frame" x="16" y="140" width="288" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Об институте" image="School">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="rWx-3X-wGt" kind="push" id="Npa-sd-F6B"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOz-7b-Qjw">
-                                <rect key="frame" x="16" y="185" width="288" height="30"/>
-                                <state key="normal" title="МАИ в интернете" image="first">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="85F-rs-Y0t" kind="push" id="k0X-YF-T0L"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-6o-KkZ">
-                                <rect key="frame" x="16" y="223" width="288" height="30"/>
-                                <state key="normal" title="О программе" image="second">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="e26-V1-rRg" kind="push" id="98A-EE-yPK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uOz-7b-Qjw" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="0bk-BL-pPn"/>
+                            <constraint firstItem="uOz-7b-Qjw" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="4zs-vf-DW2"/>
+                            <constraint firstItem="VAk-ab-9SH" firstAttribute="top" secondItem="3Mf-G5-Hkf" secondAttribute="bottom" constant="26" id="AKm-d4-kwu"/>
+                            <constraint firstItem="VAk-ab-9SH" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="HVd-bu-qwr"/>
+                            <constraint firstItem="Mif-6o-KkZ" firstAttribute="top" secondItem="uOz-7b-Qjw" secondAttribute="bottom" constant="8" id="ajO-hb-uu5"/>
+                            <constraint firstItem="ayz-ws-siv" firstAttribute="top" secondItem="VAk-ab-9SH" secondAttribute="bottom" constant="8" id="gZI-y5-A1Q"/>
+                            <constraint firstItem="Mif-6o-KkZ" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="hnX-wg-4fy"/>
+                            <constraint firstItem="ayz-ws-siv" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="mRe-Rf-UGO"/>
+                            <constraint firstItem="VAk-ab-9SH" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="nNP-US-xhF"/>
+                            <constraint firstItem="Mif-6o-KkZ" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="nsi-uZ-IZE"/>
+                            <constraint firstItem="ayz-ws-siv" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="pPA-vG-vxX"/>
+                            <constraint firstItem="uOz-7b-Qjw" firstAttribute="top" secondItem="ayz-ws-siv" secondAttribute="bottom" constant="8" id="rEQ-CM-yV6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SO5-pr-z6J"/>
                 </viewController>
@@ -239,7 +262,34 @@
                     <view key="view" contentMode="scaleToFill" id="zeU-of-5tU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRk-ma-Tmd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Московский авиационный институт (национальный исследовательский университет) основан в 1930 году с целью обеспечения подготовки высококвалифицированных кадров для авиационной промышленности страны.
+
+Уникальность МАИ заключается в том, что он исторически создавался с целью подготовки специалистов практически для всех отделов и бригад ОКБ и заводов авиационной промышленности (начиная от проектирования конструкций крыла, фюзеляжа, шасси, двигательных установок до технологии и экономики производства). По заказам предприятий оборонно-промышленного комплекса в МАИ более 50 лет назад началась и развивалась подготовка специалистов в области ракетостроения, космонавтики, систем вооружения и высокоточного оружия, программ обеспечения аэрокосмических комплексов. Впоследствии с участием МАИ был создан ряд других вузов.
+
+В настоящее время МАИ является единственным университетом в России, осуществляющим подготовку высококвалифицированных кадров по всему жизненному циклу изделий авиационной, ракетной и космической техники от системного проектирования до реализации отдельных высокотехнологичных производств.
+
+В 2009 году МАИ стал одним из 12 вузов страны, победивших в конкурсном отборе программ развития университетов, которым Правительство РФ присвоило категорию «национальный исследовательский университет» (распоряжение Правительства РФ от 02.11.2009 № 1613-р).
+
+Основной миссией МАИ является непрерывная подготовка высококвалифицированных кадров, проведение научных исследований и разработок в целях кадрового и научно-инновационного обеспечения развития авиационной, ракетной и космической отраслей, а также других высокотехнологичных оборонных секторов экономики Российской Федерации на основе интеграции науки, образования и производства для поддержания паритетности и создания технологического превосходства в данных отраслях на мировом уровне.
+
+Московский авиационный институт представляет собой аналог технопарка, в котором, наряду с учебными аудиториями, сконцентрированы многочисленные научные лаборатории, 12 научно-образовательных центров, 7 ресурсных центров, конструкторские бюро, в том числе студенческие, опытно-экспериментальный завод, аэродром и объекты социальной инфраструктуры.
+
+Накопленный научно-педагогический, образовательный и научно-методический опыт, наличие уникальной технологической базы, широкие связи с предприятиями аэрокосмической промышленности позволяют МАИ готовить специалистов высшей квалификации, уровень подготовки, знания, умения и навыки которых соответствуют современным требованиям отечественного и мирового рынков труда. Такие специалисты сегодня крайне востребованы предприятиями аэрокосмической и оборонной отраслей нашей страны.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KRk-ma-Tmd" secondAttribute="bottom" id="0vk-pS-4Vj"/>
+                            <constraint firstItem="KRk-ma-Tmd" firstAttribute="leading" secondItem="zeU-of-5tU" secondAttribute="leading" id="KB6-zQ-g6Z"/>
+                            <constraint firstItem="KRk-ma-Tmd" firstAttribute="top" secondItem="zeU-of-5tU" secondAttribute="top" id="dlh-62-4bE"/>
+                            <constraint firstAttribute="trailing" secondItem="KRk-ma-Tmd" secondAttribute="trailing" id="ojJ-Ak-mYf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Об институте" id="Ihb-bN-U3W"/>
                 </viewController>
@@ -248,48 +298,64 @@
             <point key="canvasLocation" x="1432" y="1495"/>
         </scene>
         <!--МАИ в интернете-->
-        <scene sceneID="Dfr-dN-gcY">
+        <scene sceneID="8ic-Gj-Wro">
             <objects>
-                <viewController title="МАИ в интернете" id="85F-rs-Y0t" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bLU-ug-PjO"/>
-                        <viewControllerLayoutGuide type="bottom" id="W6a-qA-mEC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="s71-t7-g9n">
+                <tableViewController title="МАИ в интернете" id="RYV-KD-6PV" customClass="MAIWebTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SwZ-Cm-8pN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="МАИ в интернете" id="Jwk-4n-wDf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tr3-mS-09x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F89-qO-sas">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F89-qO-sas" id="p6C-pP-7jC">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RYV-KD-6PV" id="Trh-gu-ti6"/>
+                            <outlet property="delegate" destination="RYV-KD-6PV" id="qhv-J0-8Jb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BVk-iJ-UIo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ucq-uJ-R3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1432" y="2130"/>
+            <point key="canvasLocation" x="1432" y="2127"/>
         </scene>
         <!--О программе-->
-        <scene sceneID="iWS-s4-bS3">
+        <scene sceneID="pwc-wc-jD5">
             <objects>
-                <viewController title="О программе" id="e26-V1-rRg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LVR-mp-hEV"/>
-                        <viewControllerLayoutGuide type="bottom" id="rni-KS-LvH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qyD-zj-fAT">
+                <tableViewController title="О программе" id="WSg-jK-ksF" customClass="AboutTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jcs-5k-eVD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="О программе" id="B2S-fH-y3N"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JPc-C3-Fyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3pB-MJ-Jol">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3pB-MJ-Jol" id="YId-tr-MVq">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WSg-jK-ksF" id="W4c-ua-gYE"/>
+                            <outlet property="delegate" destination="WSg-jK-ksF" id="CWK-7F-h5u"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="kvY-gq-1WC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sh8-pU-bbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1432" y="2769"/>
+            <point key="canvasLocation" x="1432" y="2757"/>
         </scene>
         <!--Словарь-->
         <scene sceneID="7fW-HV-fOK">
             <objects>
                 <tableViewController title="Словарь" id="BJ8-DD-fWz" customClass="DictionaryTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r4x-Ww-I3Q">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="r4x-Ww-I3Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -299,19 +365,28 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gwr-Hx-TOv" id="gx4-ra-8vv">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-jf-euS">
-                                            <rect key="frame" x="8" y="0.0" width="279" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-jf-euS">
+                                            <rect key="frame" x="8" y="8" width="279" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3R-fV-vck">
-                                            <rect key="frame" x="8" y="23" width="279" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3R-fV-vck">
+                                            <rect key="frame" x="8" y="36.5" width="279" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Y3R-fV-vck" firstAttribute="leading" secondItem="gx4-ra-8vv" secondAttribute="leading" constant="8" id="JL9-CR-WCJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y3R-fV-vck" secondAttribute="trailing" id="TQ3-h0-f1f"/>
+                                        <constraint firstItem="Y3R-fV-vck" firstAttribute="top" secondItem="Uxb-jf-euS" secondAttribute="bottom" priority="999" constant="8" id="Uv3-dl-Kj4"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Y3R-fV-vck" secondAttribute="bottom" constant="2" id="eNe-QH-Wr6"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uxb-jf-euS" secondAttribute="trailing" id="pKy-ef-rYN"/>
+                                        <constraint firstItem="Uxb-jf-euS" firstAttribute="top" secondItem="gx4-ra-8vv" secondAttribute="top" constant="8" id="quz-hF-CuS"/>
+                                        <constraint firstItem="Uxb-jf-euS" firstAttribute="leading" secondItem="gx4-ra-8vv" secondAttribute="leading" constant="8" id="ybM-Yf-sdA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="Y3R-fV-vck" id="h7j-Rx-nZo"/>
@@ -343,20 +418,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVD-iX-5de">
-                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Labelkmdslfknasjndfajdnsfkabdkfbakshdfbhjasvfjdsavbjasljvbdkhasv" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVD-iX-5de">
+                                <rect key="frame" x="16" y="72" width="288" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdM-c9-aut">
-                                <rect key="frame" x="16" y="101" width="288" height="410"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelsbkfgebskgsbdawldjakehfkjsdbfkhjsdbhjvbdsjagbcvjgsadvcjgsvdjgsdvahjkcvdhskcvdgksahvckghasvcd" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdM-c9-aut">
+                                <rect key="frame" x="16" y="121" width="288" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QdM-c9-aut" firstAttribute="trailing" secondItem="Kop-zG-XcB" secondAttribute="trailingMargin" id="9b3-GL-60S"/>
+                            <constraint firstItem="QdM-c9-aut" firstAttribute="leading" secondItem="Kop-zG-XcB" secondAttribute="leadingMargin" id="JPz-ql-0Xe"/>
+                            <constraint firstItem="FVD-iX-5de" firstAttribute="leading" secondItem="Kop-zG-XcB" secondAttribute="leadingMargin" id="Jkd-Qo-elQ"/>
+                            <constraint firstItem="QdM-c9-aut" firstAttribute="top" secondItem="FVD-iX-5de" secondAttribute="bottom" priority="999" constant="8" id="SQW-Pv-PHn"/>
+                            <constraint firstItem="FVD-iX-5de" firstAttribute="top" secondItem="Bvs-1i-0pt" secondAttribute="bottom" constant="8" id="wyL-Cz-pre"/>
+                            <constraint firstItem="jed-ZN-mGi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QdM-c9-aut" secondAttribute="bottom" priority="999" constant="8" id="yuf-Rm-par"/>
+                            <constraint firstItem="FVD-iX-5de" firstAttribute="trailing" secondItem="Kop-zG-XcB" secondAttribute="trailingMargin" id="zUS-gB-j0s"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6st-7s-sGB"/>
                     <connections>
@@ -366,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IfN-Eu-nD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="863"/>
+            <point key="canvasLocation" x="1928" y="863.5"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -391,8 +475,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Book-Open" width="42" height="42"/>
+        <image name="Message-Information" width="42" height="42"/>
+        <image name="School" width="42" height="42"/>
+        <image name="Web" width="42" height="42"/>
         <image name="tab_fac.png" width="64" height="64"/>
         <image name="tab_map.png" width="64" height="64"/>
         <image name="tab_news.png" width="64" height="64"/>
