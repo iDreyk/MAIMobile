@@ -223,6 +223,8 @@
 		4276883E1A6E986D00F2A9EE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4202E6091A6EB0150007B587 /* MainTabBarController.h */,
+				4202E60A1A6EB0150007B587 /* MainTabBarController.m */,
 				427688421A6EA3C600F2A9EE /* WebViewController.h */,
 				427688431A6EA3C600F2A9EE /* WebViewController.m */,
 				420C2FA51A7006B900DCFF4A /* ParseManager.h */,
@@ -330,8 +332,6 @@
 			children = (
 				42E94ABE1A65912C00F13C45 /* AppDelegate.h */,
 				42E94ABF1A65912C00F13C45 /* AppDelegate.m */,
-				4202E6091A6EB0150007B587 /* MainTabBarController.h */,
-				4202E60A1A6EB0150007B587 /* MainTabBarController.m */,
 				42D15CB41A6C143A00CB795E /* View Controllers */,
 				42E94AC71A65912C00F13C45 /* Main.storyboard */,
 				4276883D1A6E986000F2A9EE /* Additionals */,
