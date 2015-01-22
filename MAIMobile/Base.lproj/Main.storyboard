@@ -36,15 +36,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fjD-5c-bo3">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="News" id="UvQ-qr-PaZ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UvQ-qr-PaZ" id="YJ2-he-dMe">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="fjD-5c-bo3" secondAttribute="bottom" constant="8" id="Shv-9m-UCJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fjD-5c-bo3" secondAttribute="bottom" id="Shv-9m-UCJ"/>
                             <constraint firstAttribute="trailing" secondItem="fjD-5c-bo3" secondAttribute="trailing" id="hCb-jC-vIE"/>
-                            <constraint firstItem="fjD-5c-bo3" firstAttribute="top" secondItem="fZt-la-EJA" secondAttribute="topMargin" constant="-8" id="lf8-mN-pDF"/>
+                            <constraint firstItem="fjD-5c-bo3" firstAttribute="top" secondItem="fZt-la-EJA" secondAttribute="topMargin" id="lf8-mN-pDF"/>
                             <constraint firstItem="fjD-5c-bo3" firstAttribute="leading" secondItem="fZt-la-EJA" secondAttribute="leading" id="nFA-dX-dKb"/>
                         </constraints>
                     </view>
@@ -69,33 +77,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="55" y="263" width="210" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="52" y="313" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="wcg-6p-LVA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="facs" id="vgw-H8-I3J">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vgw-H8-I3J" id="mXi-as-qa5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstAttribute="trailing" secondItem="wcg-6p-LVA" secondAttribute="trailing" id="b8f-BL-lZ8"/>
+                            <constraint firstItem="wcg-6p-LVA" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="bXM-0G-K5M"/>
+                            <constraint firstAttribute="bottom" secondItem="wcg-6p-LVA" secondAttribute="bottom" id="u0t-jV-j6Z"/>
+                            <constraint firstItem="wcg-6p-LVA" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="v2v-jx-hlV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Yr7-JK-TwE"/>
+                    <connections>
+                        <outlet property="facsTableView" destination="wcg-6p-LVA" id="C7r-XD-wht"/>
+                        <segue destination="0I5-5v-RbD" kind="push" id="XM2-Yv-G8q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="-169"/>
+        </scene>
+        <!--Rectorate Table View Controller-->
+        <scene sceneID="Gf0-PW-1su">
+            <objects>
+                <tableViewController id="0I5-5v-RbD" customClass="RectorateTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="sXG-do-49b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rectorateCell" rowHeight="60" id="hTr-Ko-bhL" customClass="RectorateCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hTr-Ko-bhL" id="rBZ-Mq-9ar">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="0I5-5v-RbD" id="Sy1-D3-gB7"/>
+                            <outlet property="delegate" destination="0I5-5v-RbD" id="pnx-s2-wjv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="22Z-YZ-gEm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCy-h0-Mbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1518" y="-169"/>
         </scene>
         <!--Faculties-->
         <scene sceneID="a1a-yi-aOx">
@@ -266,7 +305,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRk-ma-Tmd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Московский авиационный институт (национальный исследовательский университет) основан в 1930 году с целью обеспечения подготовки высококвалифицированных кадров для авиационной промышленности страны.
+                                <string key="text">Московский авиационный институт (национальный исследовательский университет) основан в 1930 году с целью обеспечения подготовки высококвалифицированных кадров для авиационной промышленности страны.
 
 Уникальность МАИ заключается в том, что он исторически создавался с целью подготовки специалистов практически для всех отделов и бригад ОКБ и заводов авиационной промышленности (начиная от проектирования конструкций крыла, фюзеляжа, шасси, двигательных установок до технологии и экономики производства). По заказам предприятий оборонно-промышленного комплекса в МАИ более 50 лет назад началась и развивалась подготовка специалистов в области ракетостроения, космонавтики, систем вооружения и высокоточного оружия, программ обеспечения аэрокосмических комплексов. Впоследствии с участием МАИ был создан ряд других вузов.
 
@@ -278,7 +317,7 @@
 
 Московский авиационный институт представляет собой аналог технопарка, в котором, наряду с учебными аудиториями, сконцентрированы многочисленные научные лаборатории, 12 научно-образовательных центров, 7 ресурсных центров, конструкторские бюро, в том числе студенческие, опытно-экспериментальный завод, аэродром и объекты социальной инфраструктуры.
 
-Накопленный научно-педагогический, образовательный и научно-методический опыт, наличие уникальной технологической базы, широкие связи с предприятиями аэрокосмической промышленности позволяют МАИ готовить специалистов высшей квалификации, уровень подготовки, знания, умения и навыки которых соответствуют современным требованиям отечественного и мирового рынков труда. Такие специалисты сегодня крайне востребованы предприятиями аэрокосмической и оборонной отраслей нашей страны.</mutableString>
+Накопленный научно-педагогический, образовательный и научно-методический опыт, наличие уникальной технологической базы, широкие связи с предприятиями аэрокосмической промышленности позволяют МАИ готовить специалистов высшей квалификации, уровень подготовки, знания, умения и навыки которых соответствуют современным требованиям отечественного и мирового рынков труда. Такие специалисты сегодня крайне востребованы предприятиями аэрокосмической и оборонной отраслей нашей страны.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -306,7 +345,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F89-qO-sas">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="webCell" id="F89-qO-sas">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F89-qO-sas" id="p6C-pP-7jC">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -333,7 +372,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3pB-MJ-Jol">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" id="3pB-MJ-Jol">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3pB-MJ-Jol" id="YId-tr-MVq">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -366,13 +405,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-jf-euS">
-                                            <rect key="frame" x="8" y="8" width="279" height="20.5"/>
+                                            <rect key="frame" x="8" y="8" width="279" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3R-fV-vck">
-                                            <rect key="frame" x="8" y="36.5" width="279" height="18"/>
+                                            <rect key="frame" x="8" y="37" width="279" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>

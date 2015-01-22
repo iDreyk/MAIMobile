@@ -30,6 +30,12 @@
 		2FF1435F1A6FA8DA002366E6 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1435E1A6FA8DA002366E6 /* AboutTableViewController.m */; };
 		4202E60B1A6EB0150007B587 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202E60A1A6EB0150007B587 /* MainTabBarController.m */; };
 		4202E60D1A6EB0A70007B587 /* mai_logo_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4202E60C1A6EB0A70007B587 /* mai_logo_big@2x.png */; };
+		420C2FA21A6FFC6100DCFF4A /* fac2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2F9F1A6FFC6100DCFF4A /* fac2@2x.jpg */; };
+		420C2FA31A6FFC6100DCFF4A /* fac1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2FA01A6FFC6100DCFF4A /* fac1@2x.jpg */; };
+		420C2FA41A6FFC6100DCFF4A /* fac3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 420C2FA11A6FFC6100DCFF4A /* fac3@2x.jpg */; };
+		420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FA61A7006B900DCFF4A /* ParseManager.m */; };
+		420C2FAB1A700E1500DCFF4A /* RectorateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */; };
+		420C2FAE1A70133000DCFF4A /* RectorateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAD1A70133000DCFF4A /* RectorateCell.m */; };
 		42292D4A1A6C2CC60062890B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D481A6C2CC60062890B /* TwitterKit.framework */; };
 		42292D4B1A6C2CC60062890B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D491A6C2CC60062890B /* Fabric.framework */; };
 		4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */; };
@@ -91,6 +97,15 @@
 		4202E6091A6EB0150007B587 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		4202E60A1A6EB0150007B587 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		4202E60C1A6EB0A70007B587 /* mai_logo_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mai_logo_big@2x.png"; sourceTree = "<group>"; };
+		420C2F9F1A6FFC6100DCFF4A /* fac2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fac2@2x.jpg"; sourceTree = "<group>"; };
+		420C2FA01A6FFC6100DCFF4A /* fac1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fac1@2x.jpg"; sourceTree = "<group>"; };
+		420C2FA11A6FFC6100DCFF4A /* fac3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fac3@2x.jpg"; sourceTree = "<group>"; };
+		420C2FA51A7006B900DCFF4A /* ParseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseManager.h; sourceTree = "<group>"; };
+		420C2FA61A7006B900DCFF4A /* ParseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseManager.m; sourceTree = "<group>"; };
+		420C2FA91A700E1500DCFF4A /* RectorateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectorateTableViewController.h; sourceTree = "<group>"; };
+		420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectorateTableViewController.m; sourceTree = "<group>"; };
+		420C2FAC1A70133000DCFF4A /* RectorateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectorateCell.h; sourceTree = "<group>"; };
+		420C2FAD1A70133000DCFF4A /* RectorateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectorateCell.m; sourceTree = "<group>"; };
 		42292D481A6C2CC60062890B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		42292D491A6C2CC60062890B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -155,6 +170,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420C2FA81A700B3C00DCFF4A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				427688341A6E8EDB00F2A9EE /* TweetCell.h */,
+				427688351A6E8EDB00F2A9EE /* TweetCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		420C2FAF1A70133400DCFF4A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				420C2FAC1A70133000DCFF4A /* RectorateCell.h */,
+				420C2FAD1A70133000DCFF4A /* RectorateCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		4267E9531A6C25BF009DD00B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +223,12 @@
 		4276883E1A6E986D00F2A9EE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4202E6091A6EB0150007B587 /* MainTabBarController.h */,
+				4202E60A1A6EB0150007B587 /* MainTabBarController.m */,
 				427688421A6EA3C600F2A9EE /* WebViewController.h */,
 				427688431A6EA3C600F2A9EE /* WebViewController.m */,
+				420C2FA51A7006B900DCFF4A /* ParseManager.h */,
+				420C2FA61A7006B900DCFF4A /* ParseManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -216,6 +253,9 @@
 		42D15CBD1A6C146B00CB795E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				420C2F9F1A6FFC6100DCFF4A /* fac2@2x.jpg */,
+				420C2FA01A6FFC6100DCFF4A /* fac1@2x.jpg */,
+				420C2FA11A6FFC6100DCFF4A /* fac3@2x.jpg */,
 				4202E60C1A6EB0A70007B587 /* mai_logo_big@2x.png */,
 				427688401A6EA38800F2A9EE /* close@2x.png */,
 				42D15CC41A6C15E100CB795E /* tab_map@2x.png */,
@@ -250,8 +290,7 @@
 			children = (
 				42D15CCD1A6C166200CB795E /* NewsViewController.h */,
 				42D15CCE1A6C166200CB795E /* NewsViewController.m */,
-				427688341A6E8EDB00F2A9EE /* TweetCell.h */,
-				427688351A6E8EDB00F2A9EE /* TweetCell.m */,
+				420C2FA81A700B3C00DCFF4A /* Cells */,
 			);
 			name = "1. News";
 			sourceTree = "<group>";
@@ -261,6 +300,9 @@
 			children = (
 				42D15CD11A6C168700CB795E /* FacsViewController.h */,
 				42D15CD21A6C168700CB795E /* FacsViewController.m */,
+				420C2FA91A700E1500DCFF4A /* RectorateTableViewController.h */,
+				420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */,
+				420C2FAF1A70133400DCFF4A /* Cells */,
 			);
 			name = "2. Facs";
 			sourceTree = "<group>";
@@ -290,8 +332,6 @@
 			children = (
 				42E94ABE1A65912C00F13C45 /* AppDelegate.h */,
 				42E94ABF1A65912C00F13C45 /* AppDelegate.m */,
-				4202E6091A6EB0150007B587 /* MainTabBarController.h */,
-				4202E60A1A6EB0150007B587 /* MainTabBarController.m */,
 				42D15CB41A6C143A00CB795E /* View Controllers */,
 				42E94AC71A65912C00F13C45 /* Main.storyboard */,
 				4276883D1A6E986000F2A9EE /* Additionals */,
@@ -415,6 +455,7 @@
 				427688411A6EA38800F2A9EE /* close@2x.png in Resources */,
 				4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */,
 				4202E60D1A6EB0A70007B587 /* mai_logo_big@2x.png in Resources */,
+				420C2FA21A6FFC6100DCFF4A /* fac2@2x.jpg in Resources */,
 				42E94AC91A65912C00F13C45 /* Main.storyboard in Resources */,
 				42D15CC91A6C15E100CB795E /* tab_news@2x.png in Resources */,
 				42E94ACE1A65912C00F13C45 /* LaunchScreen.xib in Resources */,
@@ -422,6 +463,8 @@
 				42D15CCB1A6C162C00CB795E /* tab_other@2x.png in Resources */,
 				42D15CC71A6C15E100CB795E /* tab_map@2x.png in Resources */,
 				42E94ACB1A65912C00F13C45 /* Images.xcassets in Resources */,
+				420C2FA31A6FFC6100DCFF4A /* fac1@2x.jpg in Resources */,
+				420C2FA41A6FFC6100DCFF4A /* fac3@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,16 +502,19 @@
 				427688361A6E8EDB00F2A9EE /* TweetCell.m in Sources */,
 				2F83510A1A6C2E9E00C10793 /* DictionaryTableViewCell.m in Sources */,
 				2FE0E6151A6B1D8600663264 /* OtherViewController.m in Sources */,
+				420C2FAE1A70133000DCFF4A /* RectorateCell.m in Sources */,
 				2F83510B1A6C2E9E00C10793 /* WordViewController.m in Sources */,
 				42E94AC01A65912C00F13C45 /* AppDelegate.m in Sources */,
 				4202E60B1A6EB0150007B587 /* MainTabBarController.m in Sources */,
 				2FF1435C1A6FA8CC002366E6 /* MAIWebTableViewController.m in Sources */,
 				427688441A6EA3C600F2A9EE /* WebViewController.m in Sources */,
+				420C2FAB1A700E1500DCFF4A /* RectorateTableViewController.m in Sources */,
 				42D15CD31A6C168700CB795E /* FacsViewController.m in Sources */,
 				42E94ABD1A65912C00F13C45 /* main.m in Sources */,
 				42D15CCF1A6C166200CB795E /* NewsViewController.m in Sources */,
 				2FF1435F1A6FA8DA002366E6 /* AboutTableViewController.m in Sources */,
 				2F8351091A6C2E9E00C10793 /* DictionaryTableViewController.m in Sources */,
+				420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -608,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
