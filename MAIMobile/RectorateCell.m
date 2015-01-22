@@ -58,7 +58,7 @@
         _phoneLabel = ({
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth - 160, 70, 150, 20)];
             label.backgroundColor = [UIColor clearColor];
-            label.textColor = [UIColor colorWithRed:0 green:144./255. blue:212./255. alpha:1.0];
+            label.textColor = MAIBlueColor;
             label.textAlignment = NSTextAlignmentRight;
             label.numberOfLines = 1;
             [label setFont:[UIFont systemFontOfSize:12.0]];

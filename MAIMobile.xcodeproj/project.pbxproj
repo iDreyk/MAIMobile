@@ -37,6 +37,7 @@
 		420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FA61A7006B900DCFF4A /* ParseManager.m */; };
 		420C2FAB1A700E1500DCFF4A /* RectorateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */; };
 		420C2FAE1A70133000DCFF4A /* RectorateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAD1A70133000DCFF4A /* RectorateCell.m */; };
+		4221A6A21A7100FF008B98FC /* FacultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4221A6A11A7100FF008B98FC /* FacultyViewController.m */; };
 		42292D4A1A6C2CC60062890B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D481A6C2CC60062890B /* TwitterKit.framework */; };
 		42292D4B1A6C2CC60062890B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D491A6C2CC60062890B /* Fabric.framework */; };
 		4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */; };
@@ -109,6 +110,9 @@
 		420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectorateTableViewController.m; sourceTree = "<group>"; };
 		420C2FAC1A70133000DCFF4A /* RectorateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectorateCell.h; sourceTree = "<group>"; };
 		420C2FAD1A70133000DCFF4A /* RectorateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectorateCell.m; sourceTree = "<group>"; };
+		4221A6A01A7100FF008B98FC /* FacultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacultyViewController.h; sourceTree = "<group>"; };
+		4221A6A11A7100FF008B98FC /* FacultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacultyViewController.m; sourceTree = "<group>"; };
+		4221A6A31A710742008B98FC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		42292D481A6C2CC60062890B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		42292D491A6C2CC60062890B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			children = (
 				4276883E1A6E986D00F2A9EE /* Classes */,
 				4276883F1A6E987300F2A9EE /* Categories */,
+				4221A6A31A710742008B98FC /* PrefixHeader.pch */,
 			);
 			name = Additionals;
 			sourceTree = "<group>";
@@ -307,6 +312,8 @@
 				42D15CD21A6C168700CB795E /* FacsViewController.m */,
 				420C2FA91A700E1500DCFF4A /* RectorateTableViewController.h */,
 				420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */,
+				4221A6A01A7100FF008B98FC /* FacultyViewController.h */,
+				4221A6A11A7100FF008B98FC /* FacultyViewController.m */,
 				420C2FAF1A70133400DCFF4A /* Cells */,
 			);
 			name = "2. Facs";
@@ -512,6 +519,7 @@
 				42E94AC01A65912C00F13C45 /* AppDelegate.m in Sources */,
 				4202E60B1A6EB0150007B587 /* MainTabBarController.m in Sources */,
 				2FF1435C1A6FA8CC002366E6 /* MAIWebTableViewController.m in Sources */,
+				4221A6A21A7100FF008B98FC /* FacultyViewController.m in Sources */,
 				427688441A6EA3C600F2A9EE /* WebViewController.m in Sources */,
 				420C2FAB1A700E1500DCFF4A /* RectorateTableViewController.m in Sources */,
 				42D15CD31A6C168700CB795E /* FacsViewController.m in Sources */,
@@ -649,6 +657,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAIMobile",
 				);
+				GCC_PREFIX_HEADER = MAIMobile/PrefixHeader.pch;
 				INFOPLIST_FILE = MAIMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -668,6 +677,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAIMobile",
 				);
+				GCC_PREFIX_HEADER = MAIMobile/PrefixHeader.pch;
 				INFOPLIST_FILE = MAIMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

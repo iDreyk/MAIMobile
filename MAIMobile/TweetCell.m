@@ -27,7 +27,7 @@
         _userNameLabel = ({
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(64.0, 10, 150, 15)];
             label.backgroundColor = [UIColor clearColor];
-            label.textColor = [UIColor colorWithRed:0 green:144./255. blue:212./255. alpha:1.0];
+            label.textColor = MAIBlueColor;
             label.textAlignment = NSTextAlignmentLeft;
             label.numberOfLines = 1;
             [label setFont:[UIFont boldSystemFontOfSize:14.0]];

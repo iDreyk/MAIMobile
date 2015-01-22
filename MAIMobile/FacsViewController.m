@@ -8,6 +8,7 @@
 
 #import "FacsViewController.h"
 #import "RectorateTableViewController.h"
+#import "FacultyViewController.h"
 
 @interface FacsViewController ()
 
@@ -125,6 +126,13 @@
     
     if (indexPath.section == 0) {
         RectorateTableViewController *vc = [[RectorateTableViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        FacultyViewController *vc = [[FacultyViewController alloc] initWithImage:cell.imageView.image
+                                                                           title:cell.textLabel.text
+                                                                       andDetail:cell.detailTextLabel.text];
         [self.navigationController pushViewController:vc animated:YES];
     }
     
