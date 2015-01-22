@@ -73,7 +73,7 @@
     PFFile *imageFile = _rectorateDataArray[row][@"image"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            cell.photoImageView.image= [UIImage imageWithData:data];
+            cell.photoImageView.image = [UIImage imageWithData:data];
         }
     }];
     

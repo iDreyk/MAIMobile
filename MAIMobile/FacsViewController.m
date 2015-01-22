@@ -9,12 +9,14 @@
 #import "FacsViewController.h"
 #import "RectorateTableViewController.h"
 #import "FacultyViewController.h"
+#import "TwoLabeledCell.h"
+#import "ParseManager.h"
 
 @interface FacsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *facsTableView;
 @property (nonatomic, strong) UITableViewController *tableViewController;
-@property (nonatomic, strong) NSDictionary *dataDictionary;
+@property (nonatomic, strong) NSArray *dataArray;
 
 @end
 
@@ -23,22 +25,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _dataDictionary = @{@"rectorate" : @{@"title" : @"Ректорат",
-                                         @"subtitle" : @"Руководители института",
-                                         @"image" : @"mai_logo_big"},   // URL in API
-                        @"faculties" : @[@{@"title" : @"Первый факультет",
-                                           @"subtitle" : @"Авиационная техника",
-                                           @"image" : @"fac1.jpg",
-                                           @"url" : @"http://www.mai.ru/unit/avia/"},
-                                         @{@"title" : @"Второй факультет",
-                                           @"subtitle" : @"Двигатели летательных аппаратов",
-                                           @"image" : @"fac2.jpg",
-                                           @"url" : @"http://www.mai.ru/unit/avia/"},
-                                         @{@"title" : @"Третий факультет",
-                                           @"subtitle" : @"Системы управления, информатика и электроэнергетика",
-                                           @"image" : @"fac3.jpg",
-                                           @"url" : @"http://www.mai.ru/unit/avia/"}
-                                         ]};
+//    _dataArray = @[@{@"title" : @"Первый факультет",
+//                     @"subtitle" : @"Авиационная техника",
+//                     @"image" : @"fac1.jpg",
+//                     @"url" : @"http://www.mai.ru/unit/avia/"},
+//                   @{@"title" : @"Второй факультет",
+//                     @"subtitle" : @"Двигатели летательных аппаратов",
+//                     @"image" : @"fac2.jpg",
+//                     @"url" : @"http://www.mai.ru/unit/avia/"},
+//                   @{@"title" : @"Третий факультет",
+//                     @"subtitle" : @"Системы управления, информатика и электроэнергетика",
+//                     @"image" : @"fac3.jpg",
+//                     @"url" : @"http://www.mai.ru/unit/avia/"}
+//                    ];
     
     _facsTableView.delegate = self;
     _facsTableView.dataSource = self;
@@ -47,6 +46,13 @@
     [self addChildViewController:_tableViewController];
     
     _tableViewController.tableView = _facsTableView;
+    
+    [[ParseManager sharedInstance] getFacultiesDataWithCallback:^(BOOL didError, NSArray *array) {
+        if (!didError) {
+            _dataArray = array;
+            [_tableViewController.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,11 +76,11 @@
     if (section == 0) {
         return 1;
     }
-    return [_dataDictionary[@"faculties"] count];
+    return _dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 80;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,36 +88,36 @@
     
     static NSString *identifier = @"FacsCellId";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    TwoLabeledCell *cell = (TwoLabeledCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        cell.textLabel.font = [UIFont boldSystemFontOfSize:13];
-        cell.textLabel.numberOfLines = 1;
+        cell = [[TwoLabeledCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         
-        cell.detailTextLabel.font = [UIFont systemFontOfSize:11];
-        cell.detailTextLabel.textColor = [UIColor grayColor];
-        cell.detailTextLabel.numberOfLines = 0;
-        
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     if (indexPath.section == 0) {
-        cell.textLabel.text = _dataDictionary[@"rectorate"][@"title"];
-        cell.detailTextLabel.text = _dataDictionary[@"rectorate"][@"subtitle"];
-        cell.imageView.image = [UIImage imageNamed:_dataDictionary[@"rectorate"][@"image"]];
+        cell.titleLabel.text = @"Ректорат";
+        cell.detailLabel.text = @"Руководители института";
+        cell.logoImageView.image = [UIImage imageNamed:@"mai_logo_big"];
     } else {
-        cell.textLabel.text = _dataDictionary[@"faculties"][row][@"title"];
-        cell.detailTextLabel.text = _dataDictionary[@"faculties"][row][@"subtitle"];
-        cell.imageView.image = [UIImage imageNamed:_dataDictionary[@"faculties"][row][@"image"]];
+        cell.titleLabel.text = _dataArray[row][@"title"];
+        cell.detailLabel.text = _dataArray[row][@"subtitle"];
+        
+        PFFile *imageFile = _dataArray[row][@"image"];
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                cell.logoImageView.image = [UIImage imageWithData:data];
+            }
+        }];
     }
-    CGSize itemSize = CGSizeMake(40, 40);
-    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-    [cell.imageView.image drawInRect:imageRect];
-    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+//    CGSize itemSize = CGSizeMake(40, 40);
+//    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+//    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+//    [cell.imageView.image drawInRect:imageRect];
+//    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
 
 //    if (self.imagesDictionary[userName]) {
 //        cell.profileImageView.image = self.imagesDictionary[userName];
@@ -130,12 +136,12 @@
         RectorateTableViewController *vc = [[RectorateTableViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     } else {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        TwoLabeledCell *cell = (TwoLabeledCell *)[tableView cellForRowAtIndexPath:indexPath];
         
-        FacultyViewController *vc = [[FacultyViewController alloc] initWithImage:cell.imageView.image
-                                                                           title:cell.textLabel.text
-                                                                       andDetail:cell.detailTextLabel.text];
-        vc.urlString = _dataDictionary[@"faculties"][indexPath.row][@"url"];
+        FacultyViewController *vc = [[FacultyViewController alloc] initWithImage:cell.logoImageView.image
+                                                                           title:cell.titleLabel.text
+                                                                       andDetail:cell.detailLabel.text];
+        vc.urlString = _dataArray[indexPath.row][@"url"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

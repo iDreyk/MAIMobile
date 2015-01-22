@@ -33,7 +33,8 @@
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
-            NSDictionary *dic =  @{@"word" : obj[@"word"], @"description":obj[@"description"]};
+            NSDictionary *dic =  @{@"word"        : obj[@"word"],
+                                   @"description" : obj[@"description"]};
             [array addObject:dic];
             
         }
@@ -51,13 +52,34 @@
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
-            NSDictionary *dic =  @{@"name" : obj[@"name"],
-                                   @"job":obj[@"job"],
-                                   @"place":obj[@"place"],
-                                   @"phone":obj[@"phone"],
-                                   @"image":obj[@"image"]};
+            NSDictionary *dic =  @{@"name"  : obj[@"name"],
+                                   @"job"   : obj[@"job"],
+                                   @"place" : obj[@"place"],
+                                   @"phone" : obj[@"phone"],
+                                   @"image" : obj[@"image"]};
             [array addObject:dic];
             
+        }
+        callback(NO, array);
+    }];
+}
+
+- (void)getFacultiesDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
+    PFQuery *query = [PFQuery queryWithClassName:@"Faculty"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            callback(YES, nil);
+            return;
+        }
+        
+        NSMutableArray *array = [NSMutableArray new];
+        for (PFObject *obj in objects) {
+            NSDictionary *dic =  @{@"title"    : obj[@"title"],
+                                   @"subtitle" : obj[@"subtitle"],
+                                   @"image"    : obj[@"image"],
+                                   @"url"      : obj[@"url"],
+                                   @"id"       : obj.objectId};
+            [array addObject:dic];
         }
         callback(NO, array);
     }];

@@ -16,5 +16,6 @@
 
 - (void)getSlangWordsWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
 - (void)getRectorateDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
+- (void)getFacultiesDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
 
 @end
