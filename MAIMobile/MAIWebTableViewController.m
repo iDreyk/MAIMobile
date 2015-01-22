@@ -7,9 +7,10 @@
 //
 
 #import "MAIWebTableViewController.h"
-
+#import "MAIWebInfoTableViewCell.h"
+#import "WebViewController.h"
 @interface MAIWebTableViewController ()
-
+@property NSArray *tableData;
 @end
 
 @implementation MAIWebTableViewController
@@ -22,6 +23,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableData = @[@{@"name" : @"MAI", @"link":@"http://www.mai.ru"}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,24 +36,30 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+
+- (MAIWebInfoTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MAIWebInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"webCell" forIndexPath:indexPath];
+    cell.nameLabel.text = self.tableData[indexPath.row][@"name"];
+    cell.linkLabel.text = self.tableData[indexPath.row][@"link"];
     // Configure the cell...
     
     return cell;
 }
-*/
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WebViewController * wvc = [[WebViewController alloc] init];
+    wvc.url = [NSURL URLWithString:self.tableData[indexPath.row][@"link"]];
+    [self.navigationController pushViewController:wvc animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

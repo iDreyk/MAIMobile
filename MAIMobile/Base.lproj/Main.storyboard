@@ -340,16 +340,41 @@
         <scene sceneID="8ic-Gj-Wro">
             <objects>
                 <tableViewController title="МАИ в интернете" id="RYV-KD-6PV" customClass="MAIWebTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SwZ-Cm-8pN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="SwZ-Cm-8pN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="webCell" id="F89-qO-sas">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="webCell" id="F89-qO-sas" customClass="MAIWebInfoTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F89-qO-sas" id="p6C-pP-7jC">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-rN-xlS">
+                                            <rect key="frame" x="8" y="34.5" width="35.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgU-73-3LY">
+                                            <rect key="frame" x="8" y="8" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="shf-rN-xlS" firstAttribute="leading" secondItem="p6C-pP-7jC" secondAttribute="leadingMargin" id="6ao-Re-UJV"/>
+                                        <constraint firstItem="RgU-73-3LY" firstAttribute="top" secondItem="p6C-pP-7jC" secondAttribute="topMargin" id="8u6-62-R62"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="shf-rN-xlS" secondAttribute="bottom" id="GGW-tZ-0lD"/>
+                                        <constraint firstItem="RgU-73-3LY" firstAttribute="leading" secondItem="p6C-pP-7jC" secondAttribute="leadingMargin" id="HXB-DS-IYI"/>
+                                        <constraint firstItem="shf-rN-xlS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RgU-73-3LY" secondAttribute="bottom" id="cah-YZ-a8w"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="linkLabel" destination="shf-rN-xlS" id="blP-s9-GiP"/>
+                                    <outlet property="nameLabel" destination="RgU-73-3LY" id="gKF-Eh-zfp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

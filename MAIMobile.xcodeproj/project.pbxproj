@@ -25,6 +25,7 @@
 		2F8351251A6C433B00C10793 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8351241A6C433B00C10793 /* libsqlite3.dylib */; };
 		2F8351271A6C435100C10793 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8351261A6C435100C10793 /* Accounts.framework */; };
 		2F8351291A6C435800C10793 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8351281A6C435800C10793 /* Social.framework */; };
+		2FDAA3E01A71014F00444D84 /* MAIWebInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDAA3DF1A71014F00444D84 /* MAIWebInfoTableViewCell.m */; };
 		2FE0E6151A6B1D8600663264 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0E6141A6B1D8600663264 /* OtherViewController.m */; };
 		2FF1435C1A6FA8CC002366E6 /* MAIWebTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1435B1A6FA8CC002366E6 /* MAIWebTableViewController.m */; };
 		2FF1435F1A6FA8DA002366E6 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1435E1A6FA8DA002366E6 /* AboutTableViewController.m */; };
@@ -88,6 +89,8 @@
 		2F8351241A6C433B00C10793 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2F8351261A6C435100C10793 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		2F8351281A6C435800C10793 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		2FDAA3DE1A71014F00444D84 /* MAIWebInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIWebInfoTableViewCell.h; sourceTree = "<group>"; };
+		2FDAA3DF1A71014F00444D84 /* MAIWebInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIWebInfoTableViewCell.m; sourceTree = "<group>"; };
 		2FE0E6131A6B1D8600663264 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		2FE0E6141A6B1D8600663264 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		2FF1435A1A6FA8CC002366E6 /* MAIWebTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIWebTableViewController.h; sourceTree = "<group>"; };
@@ -281,6 +284,8 @@
 				2FF1435B1A6FA8CC002366E6 /* MAIWebTableViewController.m */,
 				2FF1435D1A6FA8DA002366E6 /* AboutTableViewController.h */,
 				2FF1435E1A6FA8DA002366E6 /* AboutTableViewController.m */,
+				2FDAA3DE1A71014F00444D84 /* MAIWebInfoTableViewCell.h */,
+				2FDAA3DF1A71014F00444D84 /* MAIWebInfoTableViewCell.m */,
 			);
 			name = "4. Other";
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				42D15CD31A6C168700CB795E /* FacsViewController.m in Sources */,
 				42E94ABD1A65912C00F13C45 /* main.m in Sources */,
 				42D15CCF1A6C166200CB795E /* NewsViewController.m in Sources */,
+				2FDAA3E01A71014F00444D84 /* MAIWebInfoTableViewCell.m in Sources */,
 				2FF1435F1A6FA8DA002366E6 /* AboutTableViewController.m in Sources */,
 				2F8351091A6C2E9E00C10793 /* DictionaryTableViewController.m in Sources */,
 				420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */,

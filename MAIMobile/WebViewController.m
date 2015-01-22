@@ -29,8 +29,13 @@
     _webView.scalesPageToFit = YES;
     [_webView loadRequest:[NSURLRequest requestWithURL:_url]];
     [self.view addSubview:_webView];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInSafari)];
 }
-
+-(void)openInSafari
+{
+    [[UIApplication sharedApplication] openURL:_url];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
