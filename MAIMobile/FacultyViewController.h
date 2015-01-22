@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *detailLabel;
+@property (nonatomic, strong) NSString *urlString;
 
 - (id)initWithImage:(UIImage *)image title:(NSString *)titleText andDetail:(NSString *)detailText;
 

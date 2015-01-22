@@ -30,16 +30,21 @@
     [_webView loadRequest:[NSURLRequest requestWithURL:_url]];
     [self.view addSubview:_webView];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInSafari)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                           target:self
+                                                                                           action:@selector(openInSafari)];
 }
--(void)openInSafari
-{
-    [[UIApplication sharedApplication] openURL:_url];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Actions
+
+- (void)openInSafari{
+    [[UIApplication sharedApplication] openURL:_url];
 }
 
 @end

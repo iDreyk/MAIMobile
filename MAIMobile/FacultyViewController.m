@@ -7,6 +7,9 @@
 //
 
 #import "FacultyViewController.h"
+#import "DepartmentsTableViewController.h"
+#import "DeansOfficeTableViewController.h"
+#import "WebViewController.h"
 
 @interface FacultyViewController ()
 
@@ -56,14 +59,47 @@
         [self.view addSubview:_detailLabel];
         
         _departmentButton = ({
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button setFrame:CGRectMake(20, 160, 150, 20)];
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(20, 220, screenWidth - 40, 50)];
+            [button setBackgroundColor:MAIBlueColor];
+            [button.layer setCornerRadius:6];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+            button.titleLabel.textAlignment = NSTextAlignmentCenter;
             [button setTitle:@"Кафедры" forState:UIControlStateNormal];
-            [button setTintColor:MAIBlueColor];
             [button addTarget:self action:@selector(openDepartments) forControlEvents:UIControlEventTouchUpInside];
             button;
         });
         [self.view addSubview:_departmentButton];
+        
+        _deansOfficeButton = ({
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(20, 290, screenWidth - 40, 50)];
+            [button setBackgroundColor:MAIBlueColor];
+            [button.layer setCornerRadius:6];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+            button.titleLabel.textAlignment = NSTextAlignmentCenter;
+            [button setTitle:@"Деканат" forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(openDeansOffice) forControlEvents:UIControlEventTouchUpInside];
+            button;
+        });
+        [self.view addSubview:_deansOfficeButton];
+
+//        _divisionsButton = ({
+//            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(20, 360, screenWidth - 40, 50)];
+//            [button setBackgroundColor:MAIBlueColor];
+//            [button.layer setCornerRadius:6];
+//            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+//            button.titleLabel.textAlignment = NSTextAlignmentCenter;
+//            [button setTitle:@"Подразделения" forState:UIControlStateNormal];
+//            [button addTarget:self action:@selector(openDivisions) forControlEvents:UIControlEventTouchUpInside];
+//            button;
+//        });
+//        [self.view addSubview:_divisionsButton];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                               target:self
+                                                                                               action:@selector(openWebInfo)];
     }
     return self;
 }
@@ -81,9 +117,29 @@
 
 #pragma mark - Actions
 
-- (void)openDepartments{
+- (void)openWebInfo{
     
+    NSString *urlAddress = [_urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *URL = [NSURL URLWithString:urlAddress];
+    
+    WebViewController *wv = [[WebViewController alloc] init];
+    wv.url = URL;
+    [self.navigationController pushViewController:wv animated:YES];
 }
+
+- (void)openDepartments{
+    DepartmentsTableViewController *vc = [[DepartmentsTableViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)openDeansOffice{
+    DeansOfficeTableViewController *vc = [[DeansOfficeTableViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+//- (void)openDivisions{
+//    NSLog(@"divisions act");
+//}
 
 /*
 #pragma mark - Navigation

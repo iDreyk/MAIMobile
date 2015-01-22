@@ -28,13 +28,16 @@
                                          @"image" : @"mai_logo_big"},   // URL in API
                         @"faculties" : @[@{@"title" : @"Первый факультет",
                                            @"subtitle" : @"Авиационная техника",
-                                           @"image" : @"fac1.jpg"},
+                                           @"image" : @"fac1.jpg",
+                                           @"url" : @"http://www.mai.ru/unit/avia/"},
                                          @{@"title" : @"Второй факультет",
                                            @"subtitle" : @"Двигатели летательных аппаратов",
-                                           @"image" : @"fac2.jpg"},
+                                           @"image" : @"fac2.jpg",
+                                           @"url" : @"http://www.mai.ru/unit/avia/"},
                                          @{@"title" : @"Третий факультет",
                                            @"subtitle" : @"Системы управления, информатика и электроэнергетика",
-                                           @"image" : @"fac3.jpg"}
+                                           @"image" : @"fac3.jpg",
+                                           @"url" : @"http://www.mai.ru/unit/avia/"}
                                          ]};
     
     _facsTableView.delegate = self;
@@ -88,11 +91,10 @@
         cell.textLabel.numberOfLines = 1;
         
         cell.detailTextLabel.font = [UIFont systemFontOfSize:11];
-        cell.detailTextLabel.textColor = [UIColor darkTextColor];
+        cell.detailTextLabel.textColor = [UIColor grayColor];
         cell.detailTextLabel.numberOfLines = 0;
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;        
     }
 
     if (indexPath.section == 0) {
@@ -133,6 +135,7 @@
         FacultyViewController *vc = [[FacultyViewController alloc] initWithImage:cell.imageView.image
                                                                            title:cell.textLabel.text
                                                                        andDetail:cell.detailTextLabel.text];
+        vc.urlString = _dataDictionary[@"faculties"][indexPath.row][@"url"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

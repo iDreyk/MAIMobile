@@ -38,6 +38,9 @@
 		420C2FAB1A700E1500DCFF4A /* RectorateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */; };
 		420C2FAE1A70133000DCFF4A /* RectorateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C2FAD1A70133000DCFF4A /* RectorateCell.m */; };
 		4221A6A21A7100FF008B98FC /* FacultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4221A6A11A7100FF008B98FC /* FacultyViewController.m */; };
+		4221A6A61A712720008B98FC /* DepartmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4221A6A51A712720008B98FC /* DepartmentsTableViewController.m */; };
+		4221A6A91A712A5E008B98FC /* DeansOfficeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4221A6A81A712A5E008B98FC /* DeansOfficeTableViewController.m */; };
+		4221A6AF1A713060008B98FC /* FourLabeledCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4221A6AE1A713060008B98FC /* FourLabeledCell.m */; };
 		42292D4A1A6C2CC60062890B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D481A6C2CC60062890B /* TwitterKit.framework */; };
 		42292D4B1A6C2CC60062890B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42292D491A6C2CC60062890B /* Fabric.framework */; };
 		4267E9511A6C22E0009DD00B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */; };
@@ -113,6 +116,12 @@
 		4221A6A01A7100FF008B98FC /* FacultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacultyViewController.h; sourceTree = "<group>"; };
 		4221A6A11A7100FF008B98FC /* FacultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacultyViewController.m; sourceTree = "<group>"; };
 		4221A6A31A710742008B98FC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4221A6A41A712720008B98FC /* DepartmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentsTableViewController.h; sourceTree = "<group>"; };
+		4221A6A51A712720008B98FC /* DepartmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentsTableViewController.m; sourceTree = "<group>"; };
+		4221A6A71A712A5E008B98FC /* DeansOfficeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeansOfficeTableViewController.h; sourceTree = "<group>"; };
+		4221A6A81A712A5E008B98FC /* DeansOfficeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeansOfficeTableViewController.m; sourceTree = "<group>"; };
+		4221A6AD1A713060008B98FC /* FourLabeledCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourLabeledCell.h; sourceTree = "<group>"; };
+		4221A6AE1A713060008B98FC /* FourLabeledCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourLabeledCell.m; sourceTree = "<group>"; };
 		42292D481A6C2CC60062890B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		42292D491A6C2CC60062890B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4267E94E1A6C22E0009DD00B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -191,6 +200,8 @@
 			children = (
 				420C2FAC1A70133000DCFF4A /* RectorateCell.h */,
 				420C2FAD1A70133000DCFF4A /* RectorateCell.m */,
+				4221A6AD1A713060008B98FC /* FourLabeledCell.h */,
+				4221A6AE1A713060008B98FC /* FourLabeledCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -314,6 +325,10 @@
 				420C2FAA1A700E1500DCFF4A /* RectorateTableViewController.m */,
 				4221A6A01A7100FF008B98FC /* FacultyViewController.h */,
 				4221A6A11A7100FF008B98FC /* FacultyViewController.m */,
+				4221A6A41A712720008B98FC /* DepartmentsTableViewController.h */,
+				4221A6A51A712720008B98FC /* DepartmentsTableViewController.m */,
+				4221A6A71A712A5E008B98FC /* DeansOfficeTableViewController.h */,
+				4221A6A81A712A5E008B98FC /* DeansOfficeTableViewController.m */,
 				420C2FAF1A70133400DCFF4A /* Cells */,
 			);
 			name = "2. Facs";
@@ -513,6 +528,8 @@
 			files = (
 				427688361A6E8EDB00F2A9EE /* TweetCell.m in Sources */,
 				2F83510A1A6C2E9E00C10793 /* DictionaryTableViewCell.m in Sources */,
+				4221A6AF1A713060008B98FC /* FourLabeledCell.m in Sources */,
+				4221A6A91A712A5E008B98FC /* DeansOfficeTableViewController.m in Sources */,
 				2FE0E6151A6B1D8600663264 /* OtherViewController.m in Sources */,
 				420C2FAE1A70133000DCFF4A /* RectorateCell.m in Sources */,
 				2F83510B1A6C2E9E00C10793 /* WordViewController.m in Sources */,
@@ -529,6 +546,7 @@
 				2FF1435F1A6FA8DA002366E6 /* AboutTableViewController.m in Sources */,
 				2F8351091A6C2E9E00C10793 /* DictionaryTableViewController.m in Sources */,
 				420C2FA71A7006B900DCFF4A /* ParseManager.m in Sources */,
+				4221A6A61A712720008B98FC /* DepartmentsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
