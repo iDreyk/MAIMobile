@@ -81,9 +81,65 @@
                                    @"id"       : obj.objectId};
             [array addObject:dic];
         }
-        callback(NO, array);
+
+        NSSortDescriptor *idDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:idDescriptor];
+        NSArray *sortedArray = [array sortedArrayUsingDescriptors:sortDescriptors];
+        
+        callback(NO, sortedArray);
     }];
 }
 
+- (void)getDepartmentsDataForFacultyId:(NSString *)facultyId withCallback:(void (^)(BOOL didError, NSArray *array))callback{
+    PFQuery *query = [PFQuery queryWithClassName:@"Chair"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            callback(YES, nil);
+            return;
+        }
+        
+        NSMutableArray *array = [NSMutableArray new];
+        for (PFObject *obj in objects) {
+            if ([obj[@"facultyId"] isEqualToString:facultyId]) {
+                NSDictionary *dic =  @{@"detail" : obj[@"name"],
+                                       @"title"  : obj[@"number"],
+                                       @"link"    : obj[@"site"]};
+                [array addObject:dic];
+            }
+        }
+        
+        NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:nameDescriptor];
+        NSArray *sortedArray = [array sortedArrayUsingDescriptors:sortDescriptors];
+        
+        callback(NO, sortedArray);
+    }];
+}
+
+- (void)getDeansOfficeDataForFacultyId:(NSString *)facultyId withCallback:(void (^)(BOOL didError, NSArray *array))callback{
+    PFQuery *query = [PFQuery queryWithClassName:@"DeansOffice"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            callback(YES, nil);
+            return;
+        }
+        
+        NSMutableArray *array = [NSMutableArray new];
+        for (PFObject *obj in objects) {
+            if ([obj[@"facultyId"] isEqualToString:facultyId]) {
+                NSDictionary *dic =  @{@"name"  : obj[@"name"],
+                                       @"job"   : obj[@"job"],
+                                       @"place" : obj[@"location"],
+                                       @"tel"   : obj[@"phone"]};
+                [array addObject:dic];
+            }
+        }
+        NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:nameDescriptor];
+        NSArray *sortedArray = [array sortedArrayUsingDescriptors:sortDescriptors];
+        
+        callback(NO, sortedArray);
+    }];
+}
 
 @end

@@ -24,20 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    _dataArray = @[@{@"title" : @"Первый факультет",
-//                     @"subtitle" : @"Авиационная техника",
-//                     @"image" : @"fac1.jpg",
-//                     @"url" : @"http://www.mai.ru/unit/avia/"},
-//                   @{@"title" : @"Второй факультет",
-//                     @"subtitle" : @"Двигатели летательных аппаратов",
-//                     @"image" : @"fac2.jpg",
-//                     @"url" : @"http://www.mai.ru/unit/avia/"},
-//                   @{@"title" : @"Третий факультет",
-//                     @"subtitle" : @"Системы управления, информатика и электроэнергетика",
-//                     @"image" : @"fac3.jpg",
-//                     @"url" : @"http://www.mai.ru/unit/avia/"}
-//                    ];
     
     _facsTableView.delegate = self;
     _facsTableView.dataSource = self;
@@ -112,19 +98,6 @@
             }
         }];
     }
-//    CGSize itemSize = CGSizeMake(40, 40);
-//    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
-//    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-//    [cell.imageView.image drawInRect:imageRect];
-//    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-
-//    if (self.imagesDictionary[userName]) {
-//        cell.profileImageView.image = self.imagesDictionary[userName];
-//    } else {
-//        NSString* imageUrl = _tweetsArray[row][@"user"][@"profile_image_url"];
-//        [self getImageFromUrl:imageUrl asynchronouslyForImageView:cell.profileImageView andKey:userName];
-//    }
     
     return cell;
 }
@@ -142,17 +115,9 @@
                                                                            title:cell.titleLabel.text
                                                                        andDetail:cell.detailLabel.text];
         vc.urlString = _dataArray[indexPath.row][@"url"];
+        vc.facultyId = _dataArray[indexPath.row][@"id"];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
-//    NSString *urlString = [NSString stringWithFormat:@"https://twitter.com/newsMAI/status/%@", _tweetsArray[indexPath.row][@"id_str"]];
-//    
-//    NSString *urlAddress = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSURL *URL = [NSURL URLWithString:urlAddress];
-//    
-//    WebViewController *wv = [[WebViewController alloc] init];
-//    wv.url = URL;
-//    [self.navigationController pushViewController:wv animated:YES];
 }
 
 @end

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *detailLabel;
 @property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, strong) NSString *facultyId;
 
 - (id)initWithImage:(UIImage *)image title:(NSString *)titleText andDetail:(NSString *)detailText;
 

@@ -10,6 +10,6 @@
 
 @interface DepartmentsTableViewController : UITableViewController
 
-@property (nonatomic, copy) NSString *departmentId;
+@property (nonatomic, copy) NSString *facultyId;
 
 @end

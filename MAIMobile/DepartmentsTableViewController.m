@@ -8,6 +8,7 @@
 
 #import "DepartmentsTableViewController.h"
 #import "WebViewController.h"
+#import "ParseManager.h"
 
 @interface DepartmentsTableViewController ()
 
@@ -20,33 +21,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    _departmentsArray = @[@{@"title" : @"Кафедра 101",
-                            @"detail" : @"Проектирование самолетов",
-                            @"link" : @"http://www.mai.ru/unit/avia/101/"},
-                          @{@"title" : @"Кафедра 102",
-                            @"detail" : @"Проектирование самолетов 2",
-                            @"link" : @"http://www.mai.ru/unit/avia/101/"},
-                          @{@"title" : @"Кафедра 103",
-                            @"detail" : @"Проектирование самолетов 3",
-                            @"link" : @"http://www.mai.ru/unit/avia/101/"}
-                          ];
+    [[ParseManager sharedInstance] getDepartmentsDataForFacultyId:_facultyId withCallback:^(BOOL didError, NSArray *array) {
+        if (!didError) {
+            _departmentsArray = array;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 40;
+    return 50;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

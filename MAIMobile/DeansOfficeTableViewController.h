@@ -10,4 +10,6 @@
 
 @interface DeansOfficeTableViewController : UITableViewController <UIActionSheetDelegate>
 
+@property (nonatomic, copy) NSString *facultyId;
+
 @end

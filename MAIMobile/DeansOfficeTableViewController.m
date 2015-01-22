@@ -8,6 +8,7 @@
 
 #import "DeansOfficeTableViewController.h"
 #import "FourLabeledCell.h"
+#import "ParseManager.h"
 
 @interface DeansOfficeTableViewController ()
 
@@ -19,26 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    _dataArray = @[@{@"name" : @"Ефремов Александр Викторович",
-                     @"job" : @"Декан, заведующий кафедрой 106",
-                     @"place" : @"506, 7 корпус",
-                     @"tel" : @"+7 499 158-27-71"},
-                   @{@"name" : @"Ефремов Александр Викторович2",
-                     @"job" : @"Декан, заведующий кафедрой 106",
-                     @"place" : @"506, 7 корпус",
-                     @"tel" : @"+7 499 158-27-71"},
-                   @{@"name" : @"Ефремов Александр Викторович3",
-                     @"job" : @"Декан, заведующий кафедрой 106",
-                     @"place" : @"506, 7 корпус",
-                     @"tel" : @"+7 499 158-27-71"},
-                   ];
+        
+    [[ParseManager sharedInstance] getDeansOfficeDataForFacultyId:_facultyId withCallback:^(BOOL didError, NSArray *array) {
+        if (!didError) {
+            _dataArray = array;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
