@@ -8,7 +8,9 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *mapScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *mapImage;
 
 @end
 
@@ -16,14 +18,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self addMaiLogo];
+    _mapScrollView.delegate = self;
+    _mapScrollView.maximumZoomScale = 10;
+    _mapScrollView.minimumZoomScale = 1;
+
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [_mapScrollView setZoomScale:0.1];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Init
+
+- (void)addMaiLogo{
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    UIImageView *maiLogo = [[UIImageView alloc] initWithFrame:CGRectMake(screenWidth/2 - 21, 0, 41.5, 40)];
+    [maiLogo setImage:[UIImage imageNamed:@"mai_logo.png"]];
+    [self.navigationController.navigationBar addSubview:maiLogo];
+}
+
+#pragma mark - Methods
+
+-(void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    
+}
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return _mapImage;
+}
 /*
 #pragma mark - Navigation
 

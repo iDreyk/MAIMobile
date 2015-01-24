@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self addMaiLogo];
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     _twitterFeedPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"twitterFeed.out"];
     _usersImagesPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"usersPics.out"];
@@ -64,6 +66,13 @@
 }
 
 #pragma mark - Init
+
+- (void)addMaiLogo{
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    UIImageView *maiLogo = [[UIImageView alloc] initWithFrame:CGRectMake(screenWidth/2 - 21, 0, 41.5, 40)];
+    [maiLogo setImage:[UIImage imageNamed:@"mai_logo.png"]];
+    [self.navigationController.navigationBar addSubview:maiLogo];
+}
 
 - (void)initTableRefreshControl{
     _refreshControl = [[UIRefreshControl alloc] init];
