@@ -14,10 +14,12 @@
 //singleton
 + (id)sharedInstance;
 
+- (void)getWebLinksWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
 - (void)getSlangWordsWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
 - (void)getRectorateDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
 - (void)getFacultiesDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback;
 - (void)getDepartmentsDataForFacultyId:(NSString *)departmentId withCallback:(void (^)(BOOL didError, NSArray *array))callback;
 - (void)getDeansOfficeDataForFacultyId:(NSString *)facultyId withCallback:(void (^)(BOOL didError, NSArray *array))callback;
+
 
 @end

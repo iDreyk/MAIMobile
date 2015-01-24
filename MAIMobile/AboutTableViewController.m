@@ -7,9 +7,9 @@
 //
 
 #import "AboutTableViewController.h"
-
+#import "AboutTableViewCell.h"
 @interface AboutTableViewController ()
-
+@property NSArray *developers;
 @end
 
 @implementation AboutTableViewController
@@ -22,6 +22,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _developers = @[@"Левинтов А.В. — 08-506", @"Царев И.С. — 08-506"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,24 +36,47 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (section == 0) {
+        
+        return 1;
+    }
+    else
+    {
+        return _developers.count;
+    }
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+
+- (AboutTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AboutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"infoCell" forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        
+        cell.aboutLabel.text = @"Приложение разработано студентами восьмого факультета в 2015 году. В разработке принимали участие:";
+    }
+    else
+    {
+        cell.aboutLabel.text = _developers[indexPath.row];
+    }
     // Configure the cell...
     
     return cell;
 }
-*/
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return 100;
+    }
+    else
+    {
+        return 40;
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

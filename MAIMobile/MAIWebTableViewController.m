@@ -9,6 +9,7 @@
 #import "MAIWebTableViewController.h"
 #import "MAIWebInfoTableViewCell.h"
 #import "WebViewController.h"
+#import "ParseManager.h"
 @interface MAIWebTableViewController ()
 @property NSArray *tableData;
 @end
@@ -23,6 +24,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[ParseManager sharedInstance] getWebLinksWithCallback:^(BOOL didError, NSArray *array) {
+        if (!didError) {
+            self.tableData = array;
+            [self.tableView reloadData];
+        }
+    }];
     self.tableData = @[@{@"name" : @"MAI", @"link":@"http://www.mai.ru"}];
 }
 
@@ -42,7 +49,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return self.tableData.count;
 }
 
 

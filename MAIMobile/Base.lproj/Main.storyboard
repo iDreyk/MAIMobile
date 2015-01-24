@@ -173,7 +173,7 @@
         <!--Map-->
         <scene sceneID="OFz-eq-Leb">
             <objects>
-                <viewController title="Map" id="GSS-dw-XSP" sceneMemberID="viewController">
+                <viewController title="Map" id="GSS-dw-XSP" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vNg-6L-scT"/>
                         <viewControllerLayoutGuide type="bottom" id="xMa-Z4-amu"/>
@@ -350,7 +350,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F89-qO-sas" id="p6C-pP-7jC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-rN-xlS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-rN-xlS">
                                             <rect key="frame" x="8" y="35" width="36" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -397,13 +397,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" id="3pB-MJ-Jol">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" id="Fb0-wi-nai" customClass="AboutTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3pB-MJ-Jol" id="YId-tr-MVq">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fb0-wi-nai" id="eUZ-An-AyC">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVO-1R-9dT">
+                                            <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JVO-1R-9dT" firstAttribute="leading" secondItem="eUZ-An-AyC" secondAttribute="leading" constant="8" id="EEG-7o-Bqd"/>
+                                        <constraint firstAttribute="trailing" secondItem="JVO-1R-9dT" secondAttribute="trailing" constant="8" id="cXV-NS-cqt"/>
+                                        <constraint firstItem="JVO-1R-9dT" firstAttribute="top" secondItem="eUZ-An-AyC" secondAttribute="top" constant="8" id="jLS-3y-3c6"/>
+                                        <constraint firstAttribute="bottom" secondItem="JVO-1R-9dT" secondAttribute="bottom" constant="8" id="ysE-Og-bP4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="aboutLabel" destination="JVO-1R-9dT" id="qdc-yn-7LF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="WSg-jK-ksF" id="W4c-ua-gYE"/>
                             <outlet property="delegate" destination="WSg-jK-ksF" id="CWK-7F-h5u"/>

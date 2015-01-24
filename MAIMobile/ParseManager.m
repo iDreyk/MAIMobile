@@ -23,7 +23,24 @@
     return _sharedObject;
 }
 
-
+- (void)getWebLinksWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
+    PFQuery *query = [PFQuery queryWithClassName:@"WebLink"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            callback(YES, nil);
+            return;        }
+        
+        NSMutableArray *array = [NSMutableArray new];
+        for (PFObject *obj in objects) {
+            NSDictionary *dic =  @{@"link"        : obj[@"link"],
+                                   @"name" : obj[@"name"]};
+            [array addObject:dic];
+            
+        }
+        callback(NO, array);
+    }];
+}
 - (void)getSlangWordsWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"SlangWord"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
