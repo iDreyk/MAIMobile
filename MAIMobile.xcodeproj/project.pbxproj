@@ -53,6 +53,7 @@
 		42D15CCB1A6C162C00CB795E /* tab_other@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D15CCA1A6C162C00CB795E /* tab_other@2x.png */; };
 		42D15CCF1A6C166200CB795E /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D15CCE1A6C166200CB795E /* NewsViewController.m */; };
 		42D15CD31A6C168700CB795E /* FacsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D15CD21A6C168700CB795E /* FacsViewController.m */; };
+		42D65FC61A73C57C00AAA9C3 /* mai_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D65FC51A73C57C00AAA9C3 /* mai_logo@2x.png */; };
 		42E94ABD1A65912C00F13C45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E94ABC1A65912C00F13C45 /* main.m */; };
 		42E94AC01A65912C00F13C45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E94ABF1A65912C00F13C45 /* AppDelegate.m */; };
 		42E94AC91A65912C00F13C45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E94AC71A65912C00F13C45 /* Main.storyboard */; };
@@ -141,6 +142,7 @@
 		42D15CCE1A6C166200CB795E /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		42D15CD11A6C168700CB795E /* FacsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacsViewController.h; sourceTree = "<group>"; };
 		42D15CD21A6C168700CB795E /* FacsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacsViewController.m; sourceTree = "<group>"; };
+		42D65FC51A73C57C00AAA9C3 /* mai_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mai_logo@2x.png"; sourceTree = "<group>"; };
 		42E94AB71A65912C00F13C45 /* MAIMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAIMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E94ABB1A65912C00F13C45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42E94ABC1A65912C00F13C45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				4202E60C1A6EB0A70007B587 /* mai_logo_big@2x.png */,
+				42D65FC51A73C57C00AAA9C3 /* mai_logo@2x.png */,
 				427688401A6EA38800F2A9EE /* close@2x.png */,
 				42D15CC41A6C15E100CB795E /* tab_map@2x.png */,
 				42D15CC51A6C15E100CB795E /* tab_fac@2x.png */,
@@ -500,6 +503,7 @@
 				42D15CC91A6C15E100CB795E /* tab_news@2x.png in Resources */,
 				42E94ACE1A65912C00F13C45 /* LaunchScreen.xib in Resources */,
 				42D15CC81A6C15E100CB795E /* tab_fac@2x.png in Resources */,
+				42D65FC61A73C57C00AAA9C3 /* mai_logo@2x.png in Resources */,
 				42D15CCB1A6C162C00CB795E /* tab_other@2x.png in Resources */,
 				42D15CC71A6C15E100CB795E /* tab_map@2x.png in Resources */,
 				42E94ACB1A65912C00F13C45 /* Images.xcassets in Resources */,

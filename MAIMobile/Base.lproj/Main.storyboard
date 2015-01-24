@@ -7,11 +7,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--News-->
+        <!--Новости-->
         <scene sceneID="2n5-cY-ISQ">
             <objects>
                 <navigationController id="lCg-Iq-enM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="tab_news.png" id="mjH-Rt-xKp"/>
+                    <tabBarItem key="tabBarItem" title="Новости" image="tab_news.png" id="mjH-Rt-xKp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M0A-fo-YtD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -102,7 +102,7 @@
                     <navigationItem key="navigationItem" id="Yr7-JK-TwE"/>
                     <connections>
                         <outlet property="facsTableView" destination="wcg-6p-LVA" id="C7r-XD-wht"/>
-                        <segue destination="0I5-5v-RbD" kind="push" id="XM2-Yv-G8q"/>
+                        <segue destination="0I5-5v-RbD" kind="push" identifier="segRect" id="XM2-Yv-G8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -137,11 +137,11 @@
             </objects>
             <point key="canvasLocation" x="1432" y="-169"/>
         </scene>
-        <!--Faculties-->
+        <!--Факультеты-->
         <scene sceneID="a1a-yi-aOx">
             <objects>
                 <navigationController id="wNn-kB-VNa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Faculties" image="tab_fac.png" id="Szx-Cq-iJ7"/>
+                    <tabBarItem key="tabBarItem" title="Факультеты" image="tab_fac.png" id="Szx-Cq-iJ7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bgI-M8-Syx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,11 +154,11 @@
             </objects>
             <point key="canvasLocation" x="488" y="-169"/>
         </scene>
-        <!--Map-->
+        <!--Карта-->
         <scene sceneID="fiM-PI-hy8">
             <objects>
                 <navigationController id="XU4-1J-zX1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="tab_map.png" id="C8H-lU-QyO"/>
+                    <tabBarItem key="tabBarItem" title="Карта" image="tab_map.png" id="C8H-lU-QyO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5VD-5f-9Uj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -210,7 +210,7 @@
                             <constraint firstAttribute="width" secondItem="EcU-BZ-F7g" secondAttribute="width" id="sdi-wx-UwO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Карта" id="hSr-Ik-Lfu"/>
+                    <navigationItem key="navigationItem" id="hSr-Ik-Lfu"/>
                     <connections>
                         <outlet property="mapImage" destination="EcU-BZ-F7g" id="mYr-O7-Ad4"/>
                         <outlet property="mapScrollView" destination="jYL-d3-tgl" id="uXO-F5-uij"/>
@@ -220,11 +220,11 @@
             </objects>
             <point key="canvasLocation" x="902" y="490"/>
         </scene>
-        <!--Other-->
+        <!--Другое-->
         <scene sceneID="LGS-2k-c93">
             <objects>
                 <navigationController id="HtC-lL-dVA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Other" image="tab_other.png" id="gYo-we-06J"/>
+                    <tabBarItem key="tabBarItem" title="Другое" image="tab_other.png" id="gYo-we-06J"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jYc-m1-2au">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -361,7 +361,7 @@
                             <constraint firstAttribute="trailing" secondItem="KRk-ma-Tmd" secondAttribute="trailing" id="ojJ-Ak-mYf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Об институте" id="Ihb-bN-U3W"/>
+                    <navigationItem key="navigationItem" id="Ihb-bN-U3W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r4h-Ux-i8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -510,7 +510,7 @@
                             <outlet property="delegate" destination="BJ8-DD-fWz" id="IYc-ei-NYb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Словарь" id="z6h-a4-2IG"/>
+                    <navigationItem key="navigationItem" id="z6h-a4-2IG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0m-dh-1sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

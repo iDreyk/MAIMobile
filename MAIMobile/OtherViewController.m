@@ -16,12 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self addMaiLogo];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Init
+
+- (void)addMaiLogo{
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    UIImageView *maiLogo = [[UIImageView alloc] initWithFrame:CGRectMake(screenWidth/2 - 21, 0, 41.5, 40)];
+    [maiLogo setImage:[UIImage imageNamed:@"mai_logo.png"]];
+    [self.navigationController.navigationBar addSubview:maiLogo];
 }
 
 /*
