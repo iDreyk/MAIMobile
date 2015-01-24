@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -181,9 +182,39 @@
                     <view key="view" contentMode="scaleToFill" id="GnH-q9-7XG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYL-d3-tgl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mai_plan_big_color" translatesAutoresizingMaskIntoConstraints="NO" id="EcU-BZ-F7g">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EcU-BZ-F7g" secondAttribute="height" multiplier="320:247" id="hQG-2o-K1Q"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EcU-BZ-F7g" secondAttribute="trailing" id="2e8-6r-mqm"/>
+                                    <constraint firstItem="EcU-BZ-F7g" firstAttribute="leading" secondItem="jYL-d3-tgl" secondAttribute="leading" id="Bkb-Yg-Hwy"/>
+                                    <constraint firstItem="EcU-BZ-F7g" firstAttribute="top" secondItem="jYL-d3-tgl" secondAttribute="top" id="JHU-3l-2cw"/>
+                                    <constraint firstAttribute="bottom" secondItem="EcU-BZ-F7g" secondAttribute="bottom" id="VKh-yA-oaI"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jYL-d3-tgl" secondAttribute="trailing" id="33b-Pg-EWP"/>
+                            <constraint firstAttribute="bottom" secondItem="jYL-d3-tgl" secondAttribute="bottom" id="RUK-VS-xb1"/>
+                            <constraint firstItem="jYL-d3-tgl" firstAttribute="top" secondItem="GnH-q9-7XG" secondAttribute="top" id="mhs-xs-f9J"/>
+                            <constraint firstItem="jYL-d3-tgl" firstAttribute="leading" secondItem="GnH-q9-7XG" secondAttribute="leading" id="qvM-94-4Ty"/>
+                            <constraint firstAttribute="width" secondItem="EcU-BZ-F7g" secondAttribute="width" id="sdi-wx-UwO"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hSr-Ik-Lfu"/>
+                    <navigationItem key="navigationItem" title="Карта" id="hSr-Ik-Lfu"/>
+                    <connections>
+                        <outlet property="mapImage" destination="EcU-BZ-F7g" id="mYr-O7-Ad4"/>
+                        <outlet property="mapScrollView" destination="jYL-d3-tgl" id="uXO-F5-uij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yB-YC-MJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -561,6 +592,7 @@
         <image name="Message-Information" width="42" height="42"/>
         <image name="School" width="42" height="42"/>
         <image name="Web" width="42" height="42"/>
+        <image name="mai_plan_big_color" width="3500" height="2475"/>
         <image name="tab_fac.png" width="64" height="64"/>
         <image name="tab_map.png" width="64" height="64"/>
         <image name="tab_news.png" width="64" height="64"/>
