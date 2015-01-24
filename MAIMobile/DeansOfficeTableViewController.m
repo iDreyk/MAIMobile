@@ -27,6 +27,7 @@
             [self.tableView reloadData];
         }
     }];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning {

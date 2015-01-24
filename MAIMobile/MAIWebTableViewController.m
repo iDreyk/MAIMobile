@@ -30,7 +30,8 @@
             [self.tableView reloadData];
         }
     }];
-    self.tableData = @[@{@"name" : @"MAI", @"link":@"http://www.mai.ru"}];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+//    self.tableData = @[@{@"name" : @"MAI", @"link":@"http://www.mai.ru"}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,14 +42,10 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return self.tableData.count;
 }
 

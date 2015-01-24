@@ -29,12 +29,16 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);
-            return;        }
+            return;
+        }
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
-            NSDictionary *dic =  @{@"link"        : obj[@"link"],
-                                   @"name" : obj[@"name"]};
+            NSString *link = obj[@"link"];
+            NSString *name = obj[@"name"];
+            
+            NSDictionary *dic =  @{@"link" : link ? link : @"",
+                                   @"name" : name ? name : @""};
             [array addObject:dic];
             
         }
@@ -47,7 +51,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);
-            return;        }
+            return;
+        }
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
