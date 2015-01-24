@@ -92,11 +92,13 @@
         cell.detailLabel.text = _dataArray[row][@"subtitle"];
         
         PFFile *imageFile = _dataArray[row][@"image"];
-        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            if (!error) {
-                cell.logoImageView.image = [UIImage imageWithData:data];
-            }
-        }];
+        if ([imageFile isEqual:[NSNull null]] == NO) {
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    cell.logoImageView.image = [UIImage imageWithData:data];
+                }
+            }];
+        }
     }
     
     return cell;

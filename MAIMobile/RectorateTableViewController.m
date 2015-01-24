@@ -71,11 +71,13 @@
     cell.phoneLabel.text = _rectorateDataArray[row][@"phone"];
 
     PFFile *imageFile = _rectorateDataArray[row][@"image"];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            cell.photoImageView.image = [UIImage imageWithData:data];
-        }
-    }];
+    if ([imageFile isEqual:[NSNull null]] == NO) {
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                cell.photoImageView.image = [UIImage imageWithData:data];
+            }
+        }];
+    }
     
     return cell;
 }
@@ -84,6 +86,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *phoneNumber = ((RectorateCell *)[tableView cellForRowAtIndexPath:indexPath]).phoneLabel.text;
+    
+    if ([phoneNumber isEqualToString:@""]) {
+        return;
+    }
     
     UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:@"Набрать номер"
                                                           delegate:self
