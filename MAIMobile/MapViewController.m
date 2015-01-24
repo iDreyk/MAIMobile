@@ -20,10 +20,10 @@
     [super viewDidLoad];
     
     [self addMaiLogo];
+
     _mapScrollView.delegate = self;
     _mapScrollView.maximumZoomScale = 10;
     _mapScrollView.minimumZoomScale = 1;
-
 }
 
 -(void)viewWillAppear:(BOOL)animated
