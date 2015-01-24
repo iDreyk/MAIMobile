@@ -210,7 +210,7 @@
                             <constraint firstAttribute="width" secondItem="EcU-BZ-F7g" secondAttribute="width" id="sdi-wx-UwO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Карта" id="hSr-Ik-Lfu"/>
+                    <navigationItem key="navigationItem" id="hSr-Ik-Lfu"/>
                     <connections>
                         <outlet property="mapImage" destination="EcU-BZ-F7g" id="mYr-O7-Ad4"/>
                         <outlet property="mapScrollView" destination="jYL-d3-tgl" id="uXO-F5-uij"/>
@@ -361,7 +361,7 @@
                             <constraint firstAttribute="trailing" secondItem="KRk-ma-Tmd" secondAttribute="trailing" id="ojJ-Ak-mYf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Об институте" id="Ihb-bN-U3W"/>
+                    <navigationItem key="navigationItem" id="Ihb-bN-U3W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r4h-Ux-i8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,7 +381,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F89-qO-sas" id="p6C-pP-7jC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-rN-xlS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-rN-xlS">
                                             <rect key="frame" x="8" y="35" width="36" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -433,8 +433,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fb0-wi-nai" id="eUZ-An-AyC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVO-1R-9dT">
-                                            <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVO-1R-9dT">
+                                            <rect key="frame" x="8" y="8" width="304" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -513,7 +513,7 @@
                             <outlet property="delegate" destination="BJ8-DD-fWz" id="IYc-ei-NYb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Словарь" id="z6h-a4-2IG"/>
+                    <navigationItem key="navigationItem" id="z6h-a4-2IG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0m-dh-1sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

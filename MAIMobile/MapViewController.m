@@ -24,12 +24,10 @@
     _mapScrollView.delegate = self;
     _mapScrollView.maximumZoomScale = 10;
     _mapScrollView.minimumZoomScale = 1;
+    
+    [_mapScrollView setZoomScale:2];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [_mapScrollView setZoomScale:0.1];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
