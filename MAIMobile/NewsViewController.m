@@ -279,13 +279,13 @@
                         [_refreshControl endRefreshing];
                     }
                 } else {
-                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Twitter seems to be offline" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Не удалось соединиться с Twitter" delegate:nil cancelButtonTitle:@"Закрыть" otherButtonTitles:nil];
                     [av show];
                     [_refreshControl endRefreshing];
                 }
             }];
         } else{
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internet connection seems to be offline" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Проверьте интернет подключение" delegate:nil cancelButtonTitle:@"Закрыть" otherButtonTitles:nil];
             [av show];
             [_refreshControl endRefreshing];
         }
