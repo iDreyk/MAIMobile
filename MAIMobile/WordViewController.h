@@ -10,6 +10,6 @@
 
 @interface WordViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionView;
 @property (strong, nonatomic) NSDictionary *word;
 @end

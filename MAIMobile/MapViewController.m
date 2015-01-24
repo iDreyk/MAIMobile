@@ -24,11 +24,6 @@
 
     // Do any additional setup after loading the view.
 }
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [_mapScrollView setZoomScale:0.1];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
