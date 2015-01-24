@@ -51,8 +51,11 @@
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
-            NSDictionary *dic =  @{@"word"        : obj[@"word"],
-                                   @"description" : obj[@"description"]};
+            NSString *word = obj[@"word"];
+            NSString *desc = obj[@"description"];
+            
+            NSDictionary *dic =  @{@"word"        : word ? word : @"",
+                                   @"description" : desc ? desc : @""};
             [array addObject:dic];
             
         }
@@ -71,11 +74,17 @@
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
-            NSDictionary *dic =  @{@"name"  : obj[@"name"],
-                                   @"job"   : obj[@"job"],
-                                   @"place" : obj[@"place"],
-                                   @"phone" : obj[@"phone"],
-                                   @"image" : obj[@"image"]};
+            NSString *name = obj[@"name"];
+            NSString *job = obj[@"job"];
+            NSString *place = obj[@"place"];
+            NSString *phone = obj[@"phone"];
+            NSString *img = obj[@"image"];
+            
+            NSDictionary *dic =  @{@"name"  : name ? name : @"",
+                                   @"job"   : job ? job : @"",
+                                   @"place" : place ? place : @"",
+                                   @"phone" : phone ? phone : @"",
+                                   @"image" : img ? img : [NSNull null]};
             [array addObject:dic];
             
         }
@@ -94,10 +103,15 @@
         
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
-            NSDictionary *dic =  @{@"title"    : obj[@"title"],
-                                   @"subtitle" : obj[@"subtitle"],
-                                   @"image"    : obj[@"image"],
-                                   @"url"      : obj[@"url"],
+            NSString *title = obj[@"title"];
+            NSString *subtitle = obj[@"subtitle"];
+            NSString *img = obj[@"image"];
+            NSString *URL = obj[@"url"];
+            
+            NSDictionary *dic =  @{@"title"    : title ? title : @"",
+                                   @"subtitle" : subtitle ? subtitle : @"",
+                                   @"image"    : img ? img : [NSNull null],
+                                   @"url"      : URL ? URL : @"",
                                    @"id"       : obj.objectId};
             [array addObject:dic];
         }
@@ -122,9 +136,13 @@
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
             if ([obj[@"facultyId"] isEqualToString:facultyId]) {
-                NSDictionary *dic =  @{@"detail" : obj[@"name"],
-                                       @"title"  : obj[@"number"],
-                                       @"link"    : obj[@"site"]};
+                NSString *detail = obj[@"name"];
+                NSString *title = obj[@"number"];
+                NSString *link = obj[@"site"];
+                
+                NSDictionary *dic =  @{@"detail" : detail ? detail : @"",
+                                       @"title"  : title ? title : @"",
+                                       @"link"   : link ? link : @""};
                 [array addObject:dic];
             }
         }
@@ -149,10 +167,15 @@
         NSMutableArray *array = [NSMutableArray new];
         for (PFObject *obj in objects) {
             if ([obj[@"facultyId"] isEqualToString:facultyId]) {
-                NSDictionary *dic =  @{@"name"  : obj[@"name"],
-                                       @"job"   : obj[@"job"],
-                                       @"place" : obj[@"location"],
-                                       @"tel"   : obj[@"phone"]};
+                NSString *name = obj[@"name"];
+                NSString *job = obj[@"job"];
+                NSString *place = obj[@"location"];
+                NSString *tel = obj[@"phone"];
+                
+                NSDictionary *dic =  @{@"name"  : name ? name : @"",
+                                       @"job"   : job ? job : @"",
+                                       @"place" : place ? place : @"",
+                                       @"tel"   : tel ? tel : @""};
                 [array addObject:dic];
             }
         }

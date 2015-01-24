@@ -72,6 +72,10 @@
     
     NSString *phoneNumber = ((FourLabeledCell *)[tableView cellForRowAtIndexPath:indexPath]).phoneLabel.text;
     
+    if ([phoneNumber isEqualToString:@""]) {
+        return;
+    }
+    
     UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:@"Набрать номер"
                                                           delegate:self
                                                  cancelButtonTitle:@"Отмена"
