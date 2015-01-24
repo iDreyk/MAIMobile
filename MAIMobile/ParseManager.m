@@ -26,6 +26,7 @@
 
 - (void)getSlangWordsWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"SlangWord"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);
@@ -44,6 +45,7 @@
 
 - (void)getRectorateDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"Management"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);
@@ -66,6 +68,7 @@
 
 - (void)getFacultiesDataWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"Faculty"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);
@@ -92,6 +95,7 @@
 
 - (void)getDepartmentsDataForFacultyId:(NSString *)facultyId withCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"Chair"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);
@@ -118,6 +122,7 @@
 
 - (void)getDeansOfficeDataForFacultyId:(NSString *)facultyId withCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"DeansOffice"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             callback(YES, nil);

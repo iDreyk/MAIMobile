@@ -17,11 +17,7 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // [Optional] Power your app with Local Datastore. For more info, go to
-    // https://parse.com/docs/ios_guide#localdatastore/iOS
-    [Parse enableLocalDatastore];
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     // Initialize Parse.
     [Parse setApplicationId:@"H8a8xY4xm69cAezMHv9wazpO7RxY7YJMgxwMiX9N"
                   clientKey:@"7j89h7lIkxUsuMHhXcXbOTQKViHfa5vSEBYU0cju"];
