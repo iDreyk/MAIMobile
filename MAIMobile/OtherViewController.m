@@ -7,7 +7,7 @@
 //
 
 #import "OtherViewController.h"
-
+#import "WebViewController.h"
 @interface OtherViewController ()
 
 @end
@@ -32,6 +32,11 @@
     UIImageView *maiLogo = [[UIImageView alloc] initWithFrame:CGRectMake(screenWidth/2 - 21, 0, 41.5, 40)];
     [maiLogo setImage:[UIImage imageNamed:@"mai_logo.png"]];
     [self.navigationController.navigationBar addSubview:maiLogo];
+}
+- (IBAction)extracurricularLife:(id)sender {
+    WebViewController * wvc = [[WebViewController alloc] init];
+    wvc.url = [NSURL URLWithString:@"http://www.mai.ru/life/"];
+    [self.navigationController pushViewController:wvc animated:YES];
 }
 
 /*

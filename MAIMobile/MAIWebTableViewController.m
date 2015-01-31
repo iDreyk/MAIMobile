@@ -64,7 +64,10 @@
     wvc.url = [NSURL URLWithString:self.tableData[indexPath.row][@"link"]];
     [self.navigationController pushViewController:wvc animated:YES];
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [MAIWebInfoTableViewCell heightForCellWithName:self.tableData[indexPath.row][@"name"] andLink:self.tableData[indexPath.row][@"link"]];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

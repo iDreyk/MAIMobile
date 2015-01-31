@@ -292,7 +292,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-6o-KkZ">
-                                <rect key="frame" x="16" y="240" width="288" height="42"/>
+                                <rect key="frame" x="16" y="290" width="288" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="О программе" image="Message-Information">
@@ -304,7 +304,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOz-7b-Qjw">
-                                <rect key="frame" x="16" y="190" width="288" height="42"/>
+                                <rect key="frame" x="16" y="240" width="288" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="МАИ в интернете" image="Web">
@@ -315,21 +315,36 @@
                                     <segue destination="RYV-KD-6PV" kind="push" id="9yt-EI-6td"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhU-bp-XqT">
+                                <rect key="frame" x="16" y="190" width="288" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Внеучебная жизнь" image="Hockey-01-128">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="extracurricularLife:" destination="C3O-n7-Dtw" eventType="touchUpInside" id="9hT-dT-ava"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uOz-7b-Qjw" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="0bk-BL-pPn"/>
+                            <constraint firstItem="uhU-bp-XqT" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="2pD-RW-8wh"/>
                             <constraint firstItem="uOz-7b-Qjw" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="4zs-vf-DW2"/>
                             <constraint firstItem="VAk-ab-9SH" firstAttribute="top" secondItem="3Mf-G5-Hkf" secondAttribute="bottom" constant="26" id="AKm-d4-kwu"/>
                             <constraint firstItem="VAk-ab-9SH" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="HVd-bu-qwr"/>
+                            <constraint firstItem="uhU-bp-XqT" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="VUS-5g-1XO"/>
+                            <constraint firstItem="uhU-bp-XqT" firstAttribute="top" secondItem="ayz-ws-siv" secondAttribute="bottom" constant="8" id="WSv-31-sMW"/>
                             <constraint firstItem="Mif-6o-KkZ" firstAttribute="top" secondItem="uOz-7b-Qjw" secondAttribute="bottom" constant="8" id="ajO-hb-uu5"/>
+                            <constraint firstItem="uOz-7b-Qjw" firstAttribute="top" secondItem="uhU-bp-XqT" secondAttribute="bottom" constant="8" id="bHJ-5S-OU0"/>
                             <constraint firstItem="ayz-ws-siv" firstAttribute="top" secondItem="VAk-ab-9SH" secondAttribute="bottom" constant="8" id="gZI-y5-A1Q"/>
                             <constraint firstItem="Mif-6o-KkZ" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="hnX-wg-4fy"/>
                             <constraint firstItem="ayz-ws-siv" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="mRe-Rf-UGO"/>
                             <constraint firstItem="VAk-ab-9SH" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="nNP-US-xhF"/>
                             <constraint firstItem="Mif-6o-KkZ" firstAttribute="trailing" secondItem="1Rf-lY-Tqz" secondAttribute="trailingMargin" id="nsi-uZ-IZE"/>
                             <constraint firstItem="ayz-ws-siv" firstAttribute="leading" secondItem="1Rf-lY-Tqz" secondAttribute="leadingMargin" id="pPA-vG-vxX"/>
-                            <constraint firstItem="uOz-7b-Qjw" firstAttribute="top" secondItem="ayz-ws-siv" secondAttribute="bottom" constant="8" id="rEQ-CM-yV6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SO5-pr-z6J"/>
@@ -398,20 +413,22 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F89-qO-sas" id="p6C-pP-7jC">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelWeb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-rN-xlS">
-                                            <rect key="frame" x="8" y="35" width="64" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelWeb" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-rN-xlS">
+                                            <rect key="frame" x="8" y="35" width="251" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgU-73-3LY">
-                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgU-73-3LY">
+                                            <rect key="frame" x="8" y="8" width="259" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="RgU-73-3LY" secondAttribute="trailing" constant="20" id="2WB-21-Ver"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="shf-rN-xlS" secondAttribute="trailing" constant="20" id="79N-zZ-Rig"/>
                                         <constraint firstItem="RgU-73-3LY" firstAttribute="top" secondItem="p6C-pP-7jC" secondAttribute="top" constant="8" id="7Bv-9o-zhk"/>
                                         <constraint firstItem="shf-rN-xlS" firstAttribute="leading" secondItem="p6C-pP-7jC" secondAttribute="leadingMargin" id="7Wr-8y-dag"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="shf-rN-xlS" secondAttribute="bottom" id="Jmd-Nn-mLZ"/>
@@ -449,7 +466,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aXu-nM-Ac6" id="v6O-LZ-M2e">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelWeb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eys-2c-88n">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelWeb" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eys-2c-88n">
                                             <rect key="frame" x="8" y="35" width="251" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -658,6 +675,7 @@
     </scenes>
     <resources>
         <image name="Book-Open" width="42" height="42"/>
+        <image name="Hockey-01-128" width="42" height="42"/>
         <image name="Message-Information" width="42" height="42"/>
         <image name="School" width="42" height="42"/>
         <image name="Web" width="42" height="42"/>

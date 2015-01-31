@@ -25,7 +25,8 @@
     NSDictionary *attributesDictionaryName = [NSDictionary dictionaryWithObjectsAndKeys:
                                           fontName, NSFontAttributeName, nil];
     
-    CGRect frameName = [name boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width -20 - 8 - 34, 300.0)
+    //Берем ширину экрана, вычитаем наши констраинты (- 20 - 8) и вычитаем ширину навигационой стрелки (-34)
+    CGRect frameName = [name boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20 - 8 - 34, 300.0)
                                       options:NSStringDrawingUsesLineFragmentOrigin
                                    attributes:attributesDictionaryName
                                       context:nil];
@@ -33,15 +34,11 @@
     UIFont *fontLink = [UIFont systemFontOfSize:14.0f];
     NSDictionary *attributesDictionaryLink = [NSDictionary dictionaryWithObjectsAndKeys:
                                           fontLink, NSFontAttributeName, nil];
-    NSLog(@"%f",[UIScreen mainScreen].bounds.size.width );
-    CGRect frameLink = [link boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width -20 - 8, 300.0)
+    CGRect frameLink = [link boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20 - 8 - 34, 300.0)
                                       options:NSStringDrawingUsesLineFragmentOrigin
                                    attributes:attributesDictionaryLink
                                       context:nil];
-    
-    
-    
-    
-    return frameName.size.height + 8 + frameLink.size.height + 8;
+    //Результирующая высота будет складываться из высот лэйблов и констрэинтов между ними.  +10 - растояние между лжблами
+    return frameName.size.height + 8 + frameLink.size.height + 8 + 10;
 }
 @end

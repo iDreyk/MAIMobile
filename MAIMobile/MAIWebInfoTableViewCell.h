@@ -11,5 +11,5 @@
 @interface MAIWebInfoTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *linkLabel;
-
++(CGFloat)heightForCellWithName:(NSString*)name andLink:(NSString*)link;
 @end
