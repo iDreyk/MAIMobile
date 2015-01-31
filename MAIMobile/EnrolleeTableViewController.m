@@ -55,6 +55,11 @@
 
 - (EnrolleeTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EnrolleeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"enrolleCell" forIndexPath:indexPath];
+    if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1)
+    {
+        cell.contentView.frame = cell.bounds;
+        cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin |UIViewAutoresizingFlexibleTopMargin |UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
+    }
     cell.nameLabel.text = self.tableData[indexPath.row][@"name"];
     cell.linkLabel.text = self.tableData[indexPath.row][@"link"];
     // Configure the cell...
