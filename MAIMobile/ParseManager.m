@@ -47,6 +47,7 @@
 }
 - (void)getSlangWordsWithCallback:(void (^)(BOOL didError, NSArray *array))callback{
     PFQuery *query = [PFQuery queryWithClassName:@"SlangWord"];
+    [query orderByAscending:@"word"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
