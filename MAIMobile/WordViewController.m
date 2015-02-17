@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.descriptionView.text = self.word[@"description"];
+    self.descriptionView.editable = NO;
     self.wordLabel.text = self.word[@"word"];
     _wordLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:27];
 }
