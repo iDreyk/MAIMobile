@@ -27,6 +27,7 @@
                        @{@"name" : @"Контактная информация", @"link":@"http://priem.mai.ru/contacts.php"},
                        ];
     [self addMaiLogo];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning {
